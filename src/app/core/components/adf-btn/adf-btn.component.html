@@ -1,0 +1,4 @@
+<button [ngClass]="{'adf-btn': true, 'adf-btn-icon': icon, 'outlined': isOutlined,'disabled': isDisabled}">
+    <span *ngIf="icon !== undefined" class="material-symbols-outlined"> {{ icon }} </span>
+    {{ text }}
+</button>

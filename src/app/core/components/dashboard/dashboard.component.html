@@ -1,0 +1,152 @@
+<mat-toolbar class="toolbar">
+  <div class="container-fluid">
+    <div class="w-100 d-flex align-items-center justify-content-between h-100">
+      <span class="title">Vue d'ensemble</span>
+      <div class="d-flex">
+        <span class="days-title mx-2"> 7 derniers jours</span>
+        <div class="date-range d-flex align-items-center">
+          <span>6 - 12 dec. 2022</span>
+          <span class="material-symbols-outlined">arrow_drop_down</span>
+        </div>
+        <span class="days-title mx-2"> 
+          <button mat-button color="primary">Afficher les 30 derniers jours</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+<div class="grid-container m-0 mt-2">
+  <div class="mx-3" style="max-width: 190px;">
+    <app-adf-btn [matMenuTriggerFor]="menuNewCamp" text="Nouvelle campagne" class="new-camp-btn"></app-adf-btn>
+  </div>
+  <mat-menu #menuNewCamp="matMenu" class="mx-3 mt-2 px-0">
+    <button mat-menu-item class="d-flex align-items-center" routerLink="/full/campaign/new">
+      <span> Nouvelle campagne</span>
+    </button>
+    <button mat-menu-item class="d-flex align-items-center">
+      <span style="line-height: 20px;"> Reprendre une <br>campagne brouillon</span>
+    </button>
+  </mat-menu>
+  <mat-grid-list cols="4" rowHeight="420px">
+    <div class="container">
+      <mat-grid-tile [colspan]="3" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div class="d-flex align-items-center">
+                <span class="material-symbols-outlined">ads_click</span>
+                <span class="mx-2">Performances publicitaires</span>
+              </div>
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="row info-cards w-100">
+              <div class="info-card clicks">
+                <h5>Clics</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">ads_click</span>
+              </div>
+              <div class="info-card nb-camp">
+                <h5>Camp. menées</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">numbers</span>
+              </div>
+              <div class="info-card cpc-moy">
+                <h5>Coûts moy.</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">attach_money</span>
+              </div>
+              <div class="info-card solde">
+                <h5>Solde</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">attach_money</span>
+              </div>
+              <div class="info-card expenses">
+                <h5>Dépenses</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">attach_money</span>
+              </div>
+            </div>
+            <google-chart [data]="dataChart"></google-chart>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div class="d-flex align-items-center">
+                <span class="material-symbols-outlined">manage_accounts</span>
+                <span class="mx-2">Compte</span>
+              </div>
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="h-100 w-100 pt-3 position-relative dashboard-card-content d-flex flex-column align-items-start">
+              <p><span class="fw-bold">Entreprise:</span>  ADAFRI</p>
+              <p><span class="fw-bold">Compte:</span>  Adafri-1664164715006</p>
+              <p><span class="fw-bold">Identifiant:</span>  qhDOUs2GdDLe86VsklHq</p>
+              <app-adf-btn class="funds-btn text-nowrap" text="Recharger compte" icon="paid"></app-adf-btn>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div class="d-flex align-items-center">
+                <span class="material-symbols-outlined">payments</span>
+                <span class="mx-2">Facturation</span>
+              </div>
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div>Card Content Here</div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div class="d-flex align-items-center">
+                <span class="material-symbols-outlined">query_stats</span>
+                <span class="mx-2">Mots clés de recherche</span>
+              </div>
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div>Card Content Here</div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>

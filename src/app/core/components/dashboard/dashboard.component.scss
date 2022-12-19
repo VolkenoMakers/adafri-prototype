@@ -1,0 +1,120 @@
+.grid-container {
+  margin: 20px;
+  background-image: url(../../../../assets/images/background.svg);
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+.title{
+  font-size: 22px;
+  font-weight: 400;
+}
+.days-title{
+  margin-top: 3px;
+}
+.days-title, .date-range{
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--adf-gray-600);
+}
+.date-range{
+  border-radius: 2px;
+  border: 1px solid var(--adf-gray-600);
+  padding: 2px 5px;
+  cursor: pointer;
+}
+mat-toolbar {
+  button{
+    color: var(--adf-blue-700) !important;
+  }
+}
+.dashboard-card {
+  position: absolute;
+  box-shadow: rgba(0, 119, 182, 0.2) 0px 8px 24px;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.mat-card-header{
+  border-bottom: 0.3px #d9d9d9 solid;
+  margin-bottom: 10px;
+}
+
+mat-card-title{
+  span{
+    color: var(--adf-gray-800);
+    font-size: 15px;
+  }
+}
+
+.info-cards{
+  margin-left: 3px;
+  width: fit-content;
+  border-radius: 7px;
+  overflow: hidden;
+  .info-card{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: calc(100% / 5);
+    height: 116px;
+    color: white;
+    position: relative;
+    h5 {
+      font-size: 20px;
+      font-weight: 300;
+    }
+    .value{
+      margin-top: 10px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .material-symbols-outlined {
+      font-size: 70px;
+      opacity: .4;
+      right: 10px;
+      bottom: 50%;
+      position: absolute;
+      transform: translateY(50%);
+    }
+  }
+  .clicks{
+    background-color: var(--adf-blue-800);
+  }
+  .nb-camp{
+    background-color: var(--adf-blue-700);
+  }
+  .cpc-moy{
+    background-color: var(--adf-blue-600);
+  }
+  .solde{
+    background-color: var(--adf-blue-500);
+  }
+  .expenses{
+    background-color: var(--adf-blue-400);
+  }
+}
+.new-camp-btn{
+  width: fit-content;
+  background-color: red;
+}
+.funds-btn{
+  position: absolute;
+  bottom: 80px;
+  right: 50%;
+  transform: translateX(50%);
+}

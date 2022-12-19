@@ -1,0 +1,39 @@
+<main>
+    <div class="container h-100">
+        <div class="progress-bar">
+            <mat-progress-bar mode="determinate" value="{{progressValue}}"></mat-progress-bar>
+        </div>
+        <h2 class="mt-5 mb-3 animate__animated animate__backInDown">Quel est l'objectif de votre campagne ?</h2>
+        <mat-card class="w-100 animate__animated animate__backInDown">
+            <mat-card-content>
+                <h4>Choisissez votre objectif</h4>
+                <mat-divider></mat-divider>
+                <p class="pt-3">
+                    Sélectionnez un objectif pour adapter votre expérience aux objectifs et paramètres les plus efficaces pour votre campagne
+                </p>
+                <div class="objectifs-cards row row-cols-2 row-cols-lg-4 g-lg-4">
+                    <div class="col" *ngFor="let objectif of objectifs; let index = index" (click)="selectObjectif(index)">
+                        <div class="object-card px-3 pt-2" [ngClass]="{'selected-objectif': objectif === selectedObjectif}">
+                            <span class="material-symbols-outlined" tooltip="ok">{{objectif.icon}}</span>
+                            <h4 class="my-2">{{objectif.title}}</h4>
+                            <p>{{objectif.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="w-100 mt-5 animate__animated animate__backInUp" *ngIf="selectedObjectif">
+            <h4>Sélectionnez un type de campagne</h4>
+            <mat-divider></mat-divider>
+            <p class="py-3">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid.
+            </p>
+        </mat-card>
+
+        <div class="actions-btn d-flex justify-content-end align-items-center my-3">
+            <app-adf-btn class="mx-2" text="Annuler" [isOutlined]='true' (click)="cancelCampaign()"></app-adf-btn>
+            <app-adf-btn text="Lancer campagne" [isDisabled]="true"></app-adf-btn>
+        </div>
+    </div>
+</main>

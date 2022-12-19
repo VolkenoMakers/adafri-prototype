@@ -1,0 +1,33 @@
+:host{
+    .mat-dialog-container {
+        padding: 0px !important;
+    }
+    mat-toolbar{
+        z-index: 99;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: var(--adf-gray-500);
+        .search-bar{
+            top: 10px;
+            right: 50%;
+            z-index: 99 !important;
+            transform: translateX(50%);
+            overflow: visible !important;
+            input {
+                background-color: none;
+            }
+        }
+    }
+    mat-nav-list {
+        button {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 16px;
+            color: var(--adf-blue-700);
+            transition: all ease-in-out .3s;
+        }
+        button:hover {
+            color: var(--adf-blue-600);
+        }
+    }
+    
+}

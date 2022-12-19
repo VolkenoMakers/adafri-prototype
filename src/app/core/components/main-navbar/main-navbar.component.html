@@ -1,0 +1,39 @@
+<mat-toolbar>
+    <div class="position-relative d-flex justify-content-between align-items-center w-100">
+        <div>
+            <img src="assets/images/logo-blue.png" alt="adafri" width="90">
+        </div>
+        <mat-nav-list class="d-flex">
+            <button mat-list-item matTooltip="Plein écran" (click)="setFullScreen()">
+                <span class="material-symbols-outlined">fullscreen</span>
+            </button>
+            <button mat-list-item matTooltip="Rechercher" (click)="openSearchDialog()">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+            <button mat-list-item matTooltip="Besoin d'aide ?" [matMenuTriggerFor]="helpMenu">
+                <span class="material-symbols-outlined">help</span>
+            </button>
+            <mat-menu #helpMenu="matMenu">
+                Help Menu
+            </mat-menu>
+            <button mat-list-item matTooltip="Reglages" [matMenuTriggerFor]="settingMenu">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+            <mat-menu #settingMenu="matMenu">
+                Settings Menu
+            </mat-menu>
+            <button mat-list-item matTooltip="Notifications" [matMenuTriggerFor]="notifsMenu">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <mat-menu #notifsMenu="matMenu">
+                Notifications Menu
+            </mat-menu>
+            <button mat-list-item matTooltip="Compte" [matMenuTriggerFor]="accountMenu">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+            <mat-menu #accountMenu="matMenu">
+                Account Menu
+            </mat-menu>
+        </mat-nav-list>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,44 @@
+<div class="vh-100 vw-100 d-flex align-items-center justify-content-center position-relative">
+    <div class="row w-75 h-75 row-cols-1 row-cols-lg-2 text-center">
+        <div class="col login-left">
+            <div class="container-login w-100 text-start p-3">
+                <!-- <span class="material-symbols-outlined">play_arrow</span> -->
+                <img width="200" src="assets/images/a-adafri.svg" alt="adafri">
+            </div>
+        </div>
+        <div class="col login-right">
+            <div class="container-login">
+                <h3>S'identifier.</h3>
+                <h4>Bienvenue, veuillez entrer vos coordonnées.</h4>
+                <div class="form">
+                    <div class="inputs">
+                        <input type="text" name="login" placeholder="mail@xyz.com" class="w-100">
+                        <input type="text" name="password" placeholder="mot de passe" class="w-100">
+                    </div>
+                    <div class="text-end mb-5">
+                        <a href="">Mot de passe oublie ?</a>
+                    </div>
+                    <button *ngIf="!isLoading" class="submit-btn w-100" (click)="login()">Connexion</button>
+                    <div *ngIf="isLoading" class="spinner py-2">
+                        <mat-spinner [diameter]="50"></mat-spinner>
+                    </div>
+                </div>
+                <div class="divider position-relative my-4">
+                    <mat-divider></mat-divider>
+                    <span class="position-absolute">OU</span>
+                </div>
+                <button class="w-100" mat-button color="primary" >
+                    <img width="20" src="assets/images/google.png" alt="adafri">
+                    <span>Connectez-vous avec Google</span>
+                </button>
+                
+                <div class="mt-2 register d-flex align-items-center justify-content-center">
+                    <span>Vous n'avez pas de compte? </span><button (click)="register()">Inscription</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute text-center footer w-100">
+        <p>2022 © <a target="_blank" href="https://adafri.com">Adafri</a> , Inc. All rights reserved.</p>
+    </div>
+</div>

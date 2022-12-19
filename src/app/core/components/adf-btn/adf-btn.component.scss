@@ -1,0 +1,46 @@
+:host{
+  button{
+    cursor: pointer;
+  }
+  .adf-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    padding: 13px 25px;
+    border: none;
+    transition: all ease-in-out .3s;
+    background-color: var(--adf-blue-700);
+    color: #fff;
+  }
+  
+  .adf-btn:hover{
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: var(--adf-blue-600);
+  }
+
+  .adf-btn>span{
+      font-size: 20px;
+      margin-right: 5px;
+  }
+
+  .outlined{
+      background-color: transparent;
+      color:  var(--adf-blue-700);
+      border: 2px solid var(--adf-blue-700);
+  }
+
+  .outlined:hover{
+    border-color: var(--adf-blue-600);
+    color: var(--adf-white);
+  }
+  .disabled {
+    opacity: .7;
+    pointer-events: none;
+  }
+  .adf-btn-icon{
+      padding-right: 30px;
+  }
+}

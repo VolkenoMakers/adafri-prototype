@@ -1,0 +1,13 @@
+:host{
+    .main{
+        background-color: var(--adf-gray-400);
+        z-index: 99999999;
+        img {
+            max-width: 400px;
+        }
+        p{
+            font-size: 25px;
+            color: var(--adf-blue-900);
+        }
+    }
+}
