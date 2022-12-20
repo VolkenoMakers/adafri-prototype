@@ -21,8 +21,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NoInternetComponent } from './components/no-internet/no-internet.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function createTranslateLoader(httpClient:HttpClient){
+   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json')
+}
 @NgModule({
   declarations: [
     NoInternetComponent,
@@ -35,6 +42,7 @@ import { NoInternetComponent } from './components/no-internet/no-internet.compon
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MatProgressBarModule,
     MatDialogModule,
     MatProgressSpinnerModule,
@@ -46,17 +54,28 @@ import { NoInternetComponent } from './components/no-internet/no-internet.compon
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatFormFieldModule,
     FormsModule,
     RouterModule,
     Ng2GoogleChartsModule,
     MatTooltipModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     NgxDaterangepickerMd.forRoot()
   ], 
   exports: [
     NoInternetComponent,
     LoadingPageComponent,
+    HttpClientModule,
     DashboardComponent,
     TransactionsComponent,
+    TranslateModule,
+    FormsModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -67,6 +86,7 @@ import { NoInternetComponent } from './components/no-internet/no-internet.compon
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MainNavbarComponent,
+    MatFormFieldModule,
     AdfBtnComponent,
   ]
 })

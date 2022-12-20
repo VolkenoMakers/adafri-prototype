@@ -9,6 +9,8 @@
             max-width: 1088px;
             margin: 0 auto;
             .progress-bar {
+                background: rgba(0, 0, 0, 0.04);
+                border-radius: 8px;
                 height: 40px;
                 width: 74%;
                 display: flex;
@@ -16,16 +18,15 @@
                 align-items: center;
                 position: fixed;
                 top: 70px;
-                z-index: 90000;
+                z-index: 5;
                 ::ng-deep .mat-progress-bar-fill::after {
                     background-color: var(--adf-blue-700);
                 }
                 ::ng-deep .mat-progress-bar-buffer {
-                    background: #E4E8EB;
+                    background: var(--adf-gray-500);
                 }
             }
             h2 {
-                font-weight: 300;
                 font-size: 22px;
             }
             mat-card {
@@ -40,8 +41,9 @@
                 
                 .object-card {
                     cursor: pointer;
+                    overflow: hidden;
                     position: relative;
-                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                     border-radius: 7px;
                     height: 175px;
                     transition: .2s ease-in-out all;
@@ -58,7 +60,6 @@
                     }
                     p {
                         font-size: 13px;
-                        font-weight: 500;
                     }
                     span {
                         position: absolute;
@@ -67,6 +68,26 @@
                         font-size: 100px;
                         right: 10px;
                     }
+                    img {
+                        position: absolute;
+                        width: 35%;
+                        bottom: 5px;
+                        right: -15px;
+                        opacity: .8;
+                    }
+                    .img-md {
+                        width: 55%;
+                    }
+                    .badge {
+                        background-color: var(--adf-blue-700);
+                        position: absolute;
+                        right: 5px;
+                        border-radius: 25px;
+                    }
+                }
+                .object-disabled {
+                    pointer-events: none;
+                    opacity: .7;
                 }
                 .object-card:hover{
                     transform: scale(1.1);
@@ -76,6 +97,28 @@
                     background-color: var(--adf-gray-400);
                     border: 2px solid var(--adf-blue-700);
                 }
+                .broadcast-channels {
+                    .object-card {
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            object-fit: contain;
+                            overflow: hidden;
+                            opacity: 1;
+                        }
+                        p {
+                            position: relative;
+                            z-index: 5;
+                        }
+                    }
+                }
+            }
+            .name-input {
+                height: 44px;
+                padding: 5px 10px;
+                outline: none;
+                border-radius: 3px;
+                border: 1.5px solid var(--adf-gray-600);
             }
         }
     }

@@ -1,39 +1,77 @@
 <main>
     <div class="container h-100">
-        <div class="progress-bar">
+        <div class="progress-bar px-4">
             <mat-progress-bar mode="determinate" value="{{progressValue}}"></mat-progress-bar>
         </div>
-        <h2 class="mt-5 mb-3 animate__animated animate__backInDown">Quel est l'objectif de votre campagne ?</h2>
-        <mat-card class="w-100 animate__animated animate__backInDown">
+        <h2 class="mt-5 mb-3 animate__animated animate__backInLeft d-flex align-items-center">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="mx-1"> Configuration de base</span>
+        </h2>
+        <mat-card class="w-100">
             <mat-card-content>
-                <h4>Choisissez votre objectif</h4>
+                <h4 class="animate__animated animate__backInLeft">Choisissez votre objectif</h4>
                 <mat-divider></mat-divider>
-                <p class="pt-3">
+                <p class="pt-3 animate__animated animate__backInLeft">
                     Sélectionnez un objectif pour adapter votre expérience aux objectifs et paramètres les plus efficaces pour votre campagne
                 </p>
                 <div class="objectifs-cards row row-cols-2 row-cols-lg-4 g-lg-4">
                     <div class="col" *ngFor="let objectif of objectifs; let index = index" (click)="selectObjectif(index)">
                         <div class="object-card px-3 pt-2" [ngClass]="{'selected-objectif': objectif === selectedObjectif}">
                             <span class="material-symbols-outlined" tooltip="ok">{{objectif.icon}}</span>
-                            <h4 class="my-2">{{objectif.title}}</h4>
-                            <p>{{objectif.description}}</p>
+                            <h4 class="my-2 animate__animated animate__backInLeft">{{objectif.title}}</h4>
+                            <p class="animate__animated animate__backInLeft">{{objectif.description}}</p>
                         </div>
                     </div>
                 </div>
             </mat-card-content>
         </mat-card>
 
-        <mat-card class="w-100 mt-5 animate__animated animate__backInUp" *ngIf="selectedObjectif">
-            <h4>Sélectionnez un type de campagne</h4>
+        <mat-card class="w-100 mt-5" *ngIf="selectedObjectif">
+            <h4 class="animate__animated animate__backInLeft">Sélectionnez un type de campagne</h4>
             <mat-divider></mat-divider>
-            <p class="py-3">
+            <div class="py-2 mt-1 objectifs-cards row row-cols-2 row-cols-lg-4 g-lg-4">
+                <div class="col" *ngFor="let type of campaignTypes; let index = index" (click)="selectCampaignType(index)">
+                    <div class="object-card px-3 pt-2" [ngClass]="{'selected-objectif': type === selectedCampaignType}">
+                        <h4 class="text-uppercase">{{type.title}}</h4>
+                        <p>{{type.description}}</p>
+                        <img src="assets/images/{{type.image}}" alt="adafri">
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="w-100 mt-5" *ngIf="selectedCampaignType">
+            <h4 class="animate__animated animate__backInLeft">Sélectionnez un canal de diffusion</h4>
+            <mat-divider></mat-divider>
+            <p class="py-3 animate__animated animate__backInLeft">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid.
             </p>
+            <div class="objectifs-cards broadcast-channels row row-cols-2 row-cols-lg-4 g-lg-4">
+                <ng-container *ngFor="let broadcastChannel of broadcastChannels; let index = index">
+                    <div class="col animate__animated animate__backInLeft" *ngIf="broadcastChannel.campaignType === selectedCampaignType" (click)="selectBroadcastChannel(index)">
+                        <div class="object-card px-3 pt-2" [ngClass]="{'object-disabled': broadcastChannel.badge === 'bientôt', 'selected-objectif': selectedBroadcastChannel === broadcastChannel}">
+                            <div class="badge text-uppercase" *ngIf="broadcastChannel.badge">{{broadcastChannel.badge}}</div>
+                            <img src="assets/images/{{broadcastChannel.image}}" alt="adafri">
+                            <h4>{{broadcastChannel.title}}</h4> 
+                            <p>{{broadcastChannel.description}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card>
+
+        <mat-card class="w-100 mt-5" *ngIf="selectedBroadcastChannel">
+            <h4 class="animate__animated animate__backInLeft">Choisissez un nom pour la campagne</h4>
+            <mat-divider></mat-divider>
+            <p class="pt-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+            <input type="text" class="w-100 mb-2 name-input" [(ngModel)]="campaignName">
         </mat-card>
 
         <div class="actions-btn d-flex justify-content-end align-items-center my-3">
             <app-adf-btn class="mx-2" text="Annuler" [isOutlined]='true' (click)="cancelCampaign()"></app-adf-btn>
-            <app-adf-btn text="Lancer campagne" [isDisabled]="true"></app-adf-btn>
+            <app-adf-btn text="Créer campagne" [isDisabled]="campaignName.length < 5 || selectedBroadcastChannel === undefined" (click)="createCampaign()"></app-adf-btn>
         </div>
     </div>
 </main>

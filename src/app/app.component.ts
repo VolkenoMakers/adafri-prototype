@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from './core/services/langages/language.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'v4-prototype';
 
-  constructor(){
-  
+  constructor( private languageService: LanguageService ){
   }
 }
