@@ -1,6 +1,5 @@
 .grid-container {
   margin: 20px;
-  background-image: url(../../../../assets/images/background.svg);
   background-position: center;
   background-size: contain;
   background-attachment: fixed;
@@ -28,11 +27,9 @@
 .days-title, .date-range{
   font-size: 14px;
   font-weight: 400;
-  color: var(--adf-gray-600);
 }
 .date-range{
   border-radius: 2px;
-  border: 1px solid var(--adf-gray-600);
   padding: 2px 5px;
   cursor: pointer;
 }
@@ -67,13 +64,11 @@ mat-toolbar {
 
 mat-card-title{
   span{
-    color: var(--adf-gray-800);
     font-size: 15px;
   }
 }
 
 .info-cards{
-  margin-left: 3px;
   width: fit-content;
   border-radius: 7px;
   overflow: hidden;
@@ -97,7 +92,7 @@ mat-card-title{
       font-weight: bold;
     }
     .material-symbols-outlined {
-      font-size: 70px;
+      font-size: 50px;
       opacity: .4;
       right: 10px;
       bottom: 50%;
@@ -114,20 +109,77 @@ mat-card-title{
   .cpc-moy{
     background-color: var(--adf-blue-600);
   }
-  .solde{
+  .expenses{
     background-color: var(--adf-blue-500);
   }
-  .expenses{
+  .solde{
     background-color: var(--adf-blue-400);
   }
-}
-.new-camp-btn{
-  width: fit-content;
-  background-color: red;
 }
 .funds-btn{
   position: absolute;
   bottom: 80px;
   right: 50%;
   transform: translateX(50%);
+}
+
+
+// ONLY COLORS
+.white-mode {
+  :host {
+    .grid-container {
+      background-image: url(../../../../assets/images/background.svg);
+    }
+    .date-range{
+      border: 1px solid var(--adf-gray-600);
+    }
+    mat-card-header {
+      mat-card-title{
+        span{
+          color: var(--adf-gray-800);
+        }
+      }
+    }
+    mat-toolbar{
+      .days-title, .date-range {
+        color: var(--adf-gray-600);
+      }
+    }
+  }
+}
+.dark-mode {
+  :host {
+      .grid-container {
+        background-image: url(../../../../assets/images/background-dark.svg);
+      }
+      .title { 
+        color: var(--adf-white);
+      }
+      .date-range{
+        border: 1px solid var(--adf-white);
+      }
+      .dashboard-card {
+        background-color: var(--adf-black-600);
+      }
+      mat-card-header {
+        mat-card-title{
+          span{
+            color: var(--adf-white);
+          }
+        }
+        button {
+          color: var(--adf-white);
+        }
+      }
+      mat-card-content {
+        color: var(--adf-white);
+      }
+
+      mat-toolbar{ 
+          background-color: var(--adf-black-600);
+          .days-title, .date-range {
+            color: var(--adf-white);
+          }
+      }
+  }
 }

@@ -41,6 +41,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root {
   --adf-white: #fff;
   --adf-black: #000;
+  --adf-black-600: #242424;
+  --adf-black-700: #222222;
+  --adf-black-800: #1E1E1E;
+  --adf-black-900: #121212;
   --adf-gray-400: #F1F1F1;
   --adf-gray-500: #e7e7e7;
   --adf-gray-600: rgba(0, 0, 0, 0.54);
@@ -55,6 +59,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --adf-blue-700: #0077B6; 
   --adf-blue-800: #023E8A; 
   --adf-blue-900: #03045E;
+  --adf-red-800: #DC0000;
+  --adf-red-900: #850000;
 }
 
 .search-dialog-panel{

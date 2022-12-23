@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/core/services/langages/language.service';
 
 @Component({
   selector: 'app-register-page',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPageComponent implements OnInit {
 
-  constructor() { }
+  public isLoading: boolean = false
+  public actualLanguage:string
+
+  constructor(private router: Router, private languageService: LanguageService) {
+    this.actualLanguage = this.languageService.userLanguage
+   }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.router.navigate(['security/login']) 
+  }
+
+  register(){
+    this.isLoading = true
+    setTimeout(() => {
+      this.router.navigate(['overview'])
+    }, 3000);
+  }
+
+  registerGoogle(){}
+
+  setLanguage(language: string){
+    if(this.languageService.userLanguage === language) return
+    this.actualLanguage = language
+    this.languageService.setLanguage(language)
   }
 
 }

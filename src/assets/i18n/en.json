@@ -1,5 +1,92 @@
 {
-    "dashboard": {
-        "title": "Overview"
+    "campaign": {
+        "new": "New campaign",
+        "no_data": "No data",
+        "logout": "Sign out",
+        "sales": "Sales",
+        "prospects": "Prospects",
+        "trafic_to_website": "Trafic to website",
+        "promotion_product_brand": "Promotion product brand",
+        "brand_coverage_awareness": "Brand coverage awareness",
+        "wider_audience": "Wider audience",
+        "promotions_visits": "Promotions visits",
+        "without_goal": "Without goal"
+    },
+    "settings": {
+        "appearance": "Appearence"
+    },
+    "tooltips": {
+        "full_screen": "Full screen",
+        "search": "Search",
+        "dark_mode": "Dark mode",
+        "languages": {
+            "title": "Languages",
+            "french": "French",
+            "english": "English"
+        },
+        "need_help": "Need help ?"
+    },
+    "login": {
+        "title": "Sign-in.",
+        "subtitle": "Welcome, please enter your details.",
+        "password": "Password",
+        "password_forgotten": "Forgot your password ?",
+        "or": "OR",
+        "submit": "Submit",
+        "login_btn_google": "Sign-in with Google",
+        "dont_have_account": "Dont have account ?"
+    },
+    "registration": {
+        "title": "Sign-up.",
+        "firstname": "firstname",
+        "lastname": "Lastname",
+        "confirmpassword": "Confirm password",
+        "registration_btn_google": "sign-up with google",
+        "have_account": "Already have an account ?"
+    },
+    "navigation": {
+        "aside": {
+            "overview": "Overview",
+            "transactions": "Transactions",
+            "campaigns": "Campaigns",
+            "settings": "Settings",
+            "files": "File manager"
+        },
+        "dashboard": {
+            "date": {
+                "seven_last_days": "Last 7 days",
+                "show_last_30_days": "Show last 30 days"
+            },
+            "ads_performance": {
+                "title": "Advertising performance",
+                "clicks": "Clicks",
+                "cond_camps": "Camp. conducted",
+                "average_costs": "Average costs",
+                "expenses": "Expenses",
+                "pay": "Pay"
+            },
+            "account": {
+                "title": "Account",
+                "company": "Company",
+                "identifier": "Identifier",
+                "recharge_account": "Recharge account"
+            },
+            "billing": {
+                "title": "Billing"
+            }, 
+            "search_keywords": {
+                "title": "Search keywords"
+            },
+            "networks": {
+                "title": "Networks"
+            }
+        },
+        "file_manager": {
+            "add_file": "Upload file",
+            "storage": "Storage",
+            "files_detected": "detected files",
+            "contacts_detected": "contacts detected",
+            "files": "files"
+        }
     }
 }

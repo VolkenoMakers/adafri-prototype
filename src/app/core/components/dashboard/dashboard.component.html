@@ -1,41 +1,51 @@
 <mat-toolbar class="toolbar">
   <div class="container-fluid">
     <div class="w-100 d-flex align-items-center justify-content-between h-100">
-      <span class="title">{{ 'dashboard.title' | translate }}</span>
+      <span class="title">
+        {{ 'navigation.aside.overview' | translate }}
+      </span>
       <div class="d-flex">
-        <span class="days-title mx-2"> 7 derniers jours</span>
+        <span class="days-title mx-2"> 
+          {{ 'navigation.dashboard.date.seven_last_days' | translate }}
+        </span>
         <div class="date-range d-flex align-items-center">
           <span>6 - 12 dec. 2022</span>
           <span class="material-symbols-outlined">arrow_drop_down</span>
         </div>
+        <app-date-range-picker></app-date-range-picker>
         <span class="days-title mx-2"> 
-          <button mat-button color="primary">Afficher les 30 derniers jours</button>
+          <button mat-button color="primary">
+            {{ 'navigation.dashboard.date.show_last_30_days' | translate }}
+          </button>
         </span>
       </div>
     </div>
   </div>
 </mat-toolbar>
-<div class="grid-container m-0 mt-2">
+<div class="grid-container m-0 pt-2">
   <div class="mx-3" style="max-width: 190px;">
-    <app-adf-btn [matMenuTriggerFor]="menuNewCamp" text="Nouvelle campagne" class="new-camp-btn"></app-adf-btn>
+    <app-adf-btn [matMenuTriggerFor]="menuNewCamp" 
+      text="{{ 'campaign.new' | translate }}" 
+      class="new-camp-btn">
+    </app-adf-btn>
   </div>
   <mat-menu #menuNewCamp="matMenu" class="mx-3 mt-2 px-0">
     <button mat-menu-item class="d-flex align-items-center" routerLink="/full/campaign/new">
-      <span> Nouvelle campagne</span>
+      <span>{{ 'campaign.new' | translate }}</span>
     </button>
     <button mat-menu-item class="d-flex align-items-center">
-      <span style="line-height: 20px;"> Reprendre une <br>campagne brouillon</span>
+      <span> Reprendre une campagne brouillon</span>
     </button>
   </mat-menu>
-  <mat-grid-list cols="8" rowHeight="420px">
+  <mat-grid-list cols="12" rowHeight="420px">
     <div class="container">
-      <mat-grid-tile [colspan]="6" [rowspan]="1">
+      <mat-grid-tile [colspan]="9" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
                 <span class="material-symbols-outlined">ads_click</span>
-                <span class="mx-2">Performances publicitaires</span>
+                <span class="mx-2">{{ 'navigation.dashboard.ads_performance.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -47,29 +57,29 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
-            <div class="row info-cards w-100">
+            <div class="d-flex info-cards w-100">
               <div class="info-card clicks">
-                <h5>Clics</h5>
+                <h5>{{ 'navigation.dashboard.ads_performance.clicks' | translate }}</h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">ads_click</span>
               </div>
               <div class="info-card nb-camp">
-                <h5 class="text-nowrap">Camp. menées</h5>
+                <h5 class="text-nowrap">{{ 'navigation.dashboard.ads_performance.cond_camps' | translate }}</h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">numbers</span>
               </div>
               <div class="info-card cpc-moy">
-                <h5>Coûts moy.</h5>
-                <span class="value">55</span>
-                <span class="material-symbols-outlined">attach_money</span>
-              </div>
-              <div class="info-card solde">
-                <h5>Solde</h5>
+                <h5>{{ 'navigation.dashboard.ads_performance.average_costs' | translate }}</h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">attach_money</span>
               </div>
               <div class="info-card expenses">
-                <h5>Dépenses</h5>
+                <h5>{{ 'navigation.dashboard.ads_performance.expenses' | translate }}</h5>
+                <span class="value">55</span>
+                <span class="material-symbols-outlined">attach_money</span>
+              </div>
+              <div class="info-card solde">
+                <h5>{{ 'navigation.dashboard.ads_performance.pay' | translate }}</h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">attach_money</span>
               </div>
@@ -78,13 +88,13 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-grid-tile [colspan]="3" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
                 <span class="material-symbols-outlined">manage_accounts</span>
-                <span class="mx-2">Compte</span>
+                <span class="mx-2">{{ 'navigation.dashboard.account.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -96,20 +106,22 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="h-100 w-100 pt-3 position-relative dashboard-card-content d-flex flex-column align-items-start">
-              <p><span class="fw-bold">Entreprise:</span>  ADAFRI</p>
-              <p><span class="fw-bold">Compte:</span>  Adafri-1664164715006</p>
-              <p><span class="fw-bold">Identifiant:</span>  qhDOUs2GdDLe86VsklHq</p>
-              <app-adf-btn class="funds-btn text-nowrap" text="Recharger compte" icon="paid"></app-adf-btn>
+              <p><span class="fw-bold">{{ 'navigation.dashboard.account.company' | translate }}:</span>  ADAFRI</p>
+              <p><span class="fw-bold">{{ 'navigation.dashboard.account.title' | translate }}:</span>  Adafri-1664164715006</p>
+              <p><span class="fw-bold">{{ 'navigation.dashboard.account.identifier' | translate }}:</span>  qhDOUs2GdDLe86VsklHq</p>
+              <app-adf-btn class="funds-btn text-nowrap" 
+                text="{{ 'navigation.dashboard.account.recharge_account' | translate }}" icon="paid">
+              </app-adf-btn>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
                 <span class="material-symbols-outlined">payments</span>
-                <span class="mx-2">Facturation</span>
+                <span class="mx-2">{{ 'navigation.dashboard.billing.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -122,17 +134,17 @@
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
             <img src="assets/images/empty.svg" alt="adafri">
-            <p>Pas de données</p>
+            <p>{{ 'campaign.no_data' | translate }}</p>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
                 <span class="material-symbols-outlined">query_stats</span>
-                <span class="mx-2">Mots clés de recherche</span>
+                <span class="mx-2">{{ 'navigation.dashboard.search_keywords.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -145,17 +157,17 @@
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
             <img src="assets/images/empty.svg" alt="adafri">
-            <p>Pas de données</p>
+            <p>{{ 'campaign.no_data' | translate }}</p>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
                 <span class="material-symbols-outlined">network_cell</span>
-                <span class="mx-2">Reseaux</span>
+                <span class="mx-2">{{ 'navigation.dashboard.networks.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -168,7 +180,7 @@
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
             <img src="assets/images/empty.svg" alt="adafri">
-            <p>Pas de données</p>
+            <p>{{ 'campaign.no_data' | translate }}</p>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>

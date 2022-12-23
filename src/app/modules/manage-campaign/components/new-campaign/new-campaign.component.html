@@ -71,7 +71,8 @@
 
         <div class="actions-btn d-flex justify-content-end align-items-center my-3">
             <app-adf-btn class="mx-2" text="Annuler" [isOutlined]='true' (click)="cancelCampaign()"></app-adf-btn>
-            <app-adf-btn text="Créer campagne" [isDisabled]="campaignName.length < 5 || selectedBroadcastChannel === undefined" (click)="createCampaign()"></app-adf-btn>
+            <app-adf-btn text="Créer campagne" [isDisabled]="true" *ngIf="campaignName.length < 5 || selectedBroadcastChannel === undefined"></app-adf-btn>
+            <app-adf-btn text="Créer campagne" *ngIf="campaignName.length > 5 && selectedBroadcastChannel !== undefined" (click)="createCampaign()"></app-adf-btn>
         </div>
     </div>
 </main>

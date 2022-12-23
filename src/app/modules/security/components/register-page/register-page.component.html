@@ -1,1 +1,69 @@
-<p class="bg-danger">register-page works!</p>
+<div class="vh-100 vw-100 d-flex align-items-center justify-content-center position-relative">
+    <div class="container position-absolute lang-button">
+        <button mat-list-item matTooltip="{{ 'tooltips.languages.title' | translate }}" [matMenuTriggerFor]="languagesMenu">
+            <span class="material-symbols-outlined">translate</span>
+        </button>
+        <mat-menu #languagesMenu="matMenu">
+            <div class="container">
+                <h5 class="menu-title fw-bold">{{ 'tooltips.languages.title' | translate }}</h5>
+                <mat-divider class="mb-2"></mat-divider>
+                <div class="group-buttons">
+                    <div (click)="setLanguage('fr')" class="d-flex align-items-center dark-btn px-2 py-2 " [ngClass]="{'active-theme': actualLanguage === 'fr'}">
+                        <span>{{'tooltips.languages.french'|translate}}</span>
+                    </div>
+                    <div (click)="setLanguage('en')" [ngClass]="{'active-theme': actualLanguage === 'en'}" class="white-btn px-2 py-2 d-flex align-items-center">
+                        <span>{{'tooltips.languages.english'|translate}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
+    <div class="row big-row w-75 h-75 row-cols-1 row-cols-lg-2 text-center">
+        <div class="col login-left">
+            <div class="container-login w-100 text-start p-3">
+                <img width="200" src="assets/images/a-adafri.svg" alt="adafri">
+            </div>
+        </div>
+        <div class="col login-right">
+            <div class="container-login">
+                <h3>{{'registration.title'|translate}}</h3>
+                <h4>{{'login.subtitle'|translate}}</h4>
+                <div class="form">
+                    <div class="inputs">
+                        <input type="text" placeholder="mail@xyz.com" class="w-100">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" placeholder="{{'registration.firstname'|translate}}" class="w-100">
+                            </div>
+                            <div class="col">
+                                <input type="text" placeholder="{{'registration.lastname'|translate}}" class="w-100">
+                            </div>
+                        </div>
+                        <input type="text" placeholder="{{'login.password'|translate}}" class="w-100">
+                        <input type="text" placeholder="{{'registration.confirmpassword'|translate}}" class="w-100">
+                    </div>
+                    <button *ngIf="!isLoading" class="submit-btn w-100" (click)="register()">{{'login.submit'|translate}}</button>
+                    <div *ngIf="isLoading" class="spinner py-2">
+                        <mat-spinner [diameter]="50"></mat-spinner>
+                    </div>
+                </div>
+                <div class="divider position-relative my-3">
+                    <mat-divider></mat-divider>
+                    <span class="position-absolute">{{'login.or'|translate}}</span>
+                </div>
+                <button class="w-100" mat-button color="primary" (click)="registerGoogle()">
+                    <img width="20" src="assets/images/google.png" alt="adafri">
+                    <span>{{'registration.registration_btn_google'|translate}}</span>
+                </button>
+                
+                <div class="mt-2 register d-flex align-items-center justify-content-center">
+                    <span>{{'registration.have_account'|translate}} </span>
+                    <button (click)="login()">{{'login.title'|translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute text-center footer w-100">
+        <p>2022 © <a target="_blank" href="https://adafri.com">Adafri</a> , Inc. All rights reserved.</p>
+    </div>
+</div>

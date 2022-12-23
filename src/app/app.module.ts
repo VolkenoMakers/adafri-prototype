@@ -5,7 +5,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CoreModule } from "./core/core.module";
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 
+export function createTranslateLoader(httpClient:HttpClient){
+    return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json')
+ }
+ 
 @NgModule({
     declarations: [
         AppComponent,
@@ -13,6 +21,14 @@ import { CoreModule } from "./core/core.module";
     providers: [],
     bootstrap: [AppComponent],
     imports: [
+        TranslateModule.forRoot({
+            loader: {
+              provide: TranslateLoader,
+              useFactory: (createTranslateLoader),
+              deps: [HttpClient]
+            }
+          }),
+        NgxDaterangepickerMd.forRoot(),
         BrowserModule,
         CoreModule,
         AppRoutingModule,

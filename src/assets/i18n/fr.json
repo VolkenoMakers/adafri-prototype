@@ -1,5 +1,92 @@
 {
-    "dashboard": {
-        "title": "Vue d'ensemble"
+    "campaign": {
+        "new": "Nouvelle campagne",
+        "no_data": "Pas de données",
+        "logout": "Se déconnecter",
+        "sales": "Ventes",
+        "prospects": "Prospects",
+        "trafic_to_website": "Traffic vers un site web",
+        "promotion_product_brand": "Promotion product brand",
+        "brand_coverage_awareness": "Brand coverage awareness",
+        "wider_audience": "Wider audience",
+        "promotions_visits": "Promotions visits",
+        "without_goal": "Without goal"
+    },
+    "settings": {
+        "appearance": "Apparence"
+    },
+    "tooltips": {
+        "full_screen": "Plein écran",
+        "search": "Rechercher",
+        "dark_mode": "Mode sombre",
+        "languages": {
+            "title": "Langues",
+            "french": "Francais",
+            "english": "Anglais"
+        },
+        "need_help": "Besoin d'aide ?"
+    },
+    "login": {
+        "title": "S'identifier.",
+        "subtitle": "Bienvenue, veuillez entrer vos coordonnées.",
+        "password": "Mot de passe",
+        "password_forgotten": "Mot de passe oublié ?",
+        "or": "OU",
+        "submit": "Soumettre",
+        "login_btn_google": "Connectez-vous avec Google",
+        "dont_have_account": "Vous n'avez pas de compte?"
+    },
+    "registration": {
+        "title": "S'inscire.",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "confirmpassword": "Confirmez le mot de passe",
+        "registration_btn_google": "Inscrivez-vous avec Google",
+        "have_account": "Vous avez déjà un compte ?"
+    },
+    "navigation": {
+        "aside": {
+            "overview": "Vue d'ensemble",
+            "transactions": "Transactions",
+            "campaigns": "Campagnes",
+            "settings": "Paramètres",
+            "files": "Gest. de fichiers"
+        },
+        "dashboard": {
+            "date": {
+                "seven_last_days": "7 derniers jours",
+                "show_last_30_days": "Afficher les 30 dernies jours"
+            },
+            "ads_performance": {
+                "title": "Performances publicitaires",
+                "clicks": "Clics",
+                "cond_camps": "Camp. menées",
+                "average_costs": "Coûts moy.",
+                "expenses": "Dépenses",
+                "pay": "Solde"
+            },
+            "account": {
+                "title": "Compte",
+                "company": "Entreprise",
+                "identifier": "Identifiant",
+                "recharge_account": "Recharger compte"
+            },
+            "billing": {
+                "title": "Facturation"
+            }, 
+            "search_keywords": {
+                "title": "Mots clés de recherche"
+            },
+            "networks": {
+                "title": "Reseaux"
+            }
+        },
+        "file_manager": {
+            "add_file": "Ajouter fichier",
+            "storage": "Stockage",
+            "files_detected": "fichiers détectés",
+            "contacts_detected": "contacts détectés",
+            "files": "fichiers"
+        }
     }
 }

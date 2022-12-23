@@ -29,7 +29,6 @@
   }
   .sidenav {
     width: 200px;
-    background-color: var(--adf-gray-400);
   }
   
   .sidenav .mat-toolbar {
@@ -50,12 +49,41 @@
       font-size: 15px;
       font-weight: 500;
       line-height: 16px;
-      color: var(--adf-gray-900);
     }
     .active{
       border-left: var(--adf-blue-800) 5px solid;
-      background-color: var(--adf-gray-500);
     }
   }
-  
+}
+
+// ONLY COLORS
+.white-mode {
+  :host {
+    .sidenav{ 
+        background-color: var(--adf-gray-400);
+    }
+    mat-nav-list {
+      a {
+        color: var(--adf-gray-900);
+      }
+      .active {
+        background-color: var(--adf-gray-500);
+      }
+    }
+  }
+}
+.dark-mode {
+  :host {
+    .sidenav{ 
+          background-color: var(--adf-black-800);
+    }
+    mat-nav-list {
+      a {
+        color: var(--adf-white);
+      }
+      .active {
+        background-color: var(--adf-black-600);
+      }
+    }
+  }
 }

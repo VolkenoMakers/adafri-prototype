@@ -1,0 +1,139 @@
+:host{
+    .d-flex {
+        background-color: var(--adf-gray-400);
+    }
+    .lang-button {
+        right: 20px;
+        top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            background-color: transparent;
+            border: none;
+            color: var(--adf-blue-700);
+            transition: all ease-in-out .3s;
+        }
+        button:hover {
+            color: var(--adf-blue-600);
+        }
+    }
+    .big-row {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 7px;
+        overflow: hidden;
+        .login-left, .login-right{
+            overflow: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .container-login{
+                max-width: 400px;
+                height: 80%;
+            }
+        }
+        .login-left{
+            color: var(--adf-white);
+            background-image: url('../../../../../assets/images/login-bg.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            .container-login{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(5px);
+                border-radius: 7px;
+            }
+            img {
+                filter: drop-shadow(15px 10px 4px var(--adf-gray-600));
+            }
+        }
+        .login-right{
+            background-color: var(--adf-white);
+            h3 {
+                font-weight: 500;
+                font-size: 25px;
+                color: var(--adf-blue-600);
+                letter-spacing: 3px;
+            }
+            h4 {
+                font-weight: 500;
+            }
+            button{
+                img{
+                    margin-right: 10px;
+                }
+                border-radius: 25px;
+                background-color: var(--adf-gray-400);
+                padding: 5px;
+            }
+            .divider{
+                .position-absolute {
+                    right: 50%;
+                    top: -9px;
+                    transform: translateX(50%);
+                    background-color: var(--adf-white);
+                    padding: 0 5px;
+                }
+            }
+            .form {
+                .text-end {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                .inputs{
+                    input {
+                        border: none;
+                        border-bottom: 1.3px solid var(--adf-gray-500);
+                        margin-bottom: 20px;
+                        height: 44px;
+                        padding-left: 10px;
+                        outline: none;
+                        transition: all ease-in-out .1s;
+                    }
+                    input:focus{
+                        border-bottom: 2px solid var(--adf-blue-600);
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: var(--adf-black);
+                    margin-bottom: 40px;
+                }
+                .submit-btn {
+                    height: 44px;
+                    border: none;
+                    transition: all ease-in-out .3s;
+                    background-color: var(--adf-blue-700);
+                    color: #fff;
+                }
+                .submit-btn:hover{
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    background-color: var(--adf-blue-600);
+                }
+            }
+        }
+    }
+    .spinner {
+        display: flex;
+        justify-content: center;
+    }
+    .spinner::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: var(--adf-blue-600);
+    }
+    .register {
+        background-color: var(--adf-white);
+        button {
+            border: none;
+            background-color: var(--adf-white) !important;
+            font-weight: 500;
+        }
+    }
+    .footer{
+        bottom: 10px;
+        a {
+            text-decoration: none;
+        }
+    }
+}

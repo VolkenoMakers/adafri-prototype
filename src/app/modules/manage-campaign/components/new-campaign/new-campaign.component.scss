@@ -1,6 +1,5 @@
 :host {
     main {
-        background-color: var(--adf-gray-400);
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -9,7 +8,6 @@
             max-width: 1088px;
             margin: 0 auto;
             .progress-bar {
-                background: rgba(0, 0, 0, 0.04);
                 border-radius: 8px;
                 height: 40px;
                 width: 74%;
@@ -119,6 +117,47 @@
                 outline: none;
                 border-radius: 3px;
                 border: 1.5px solid var(--adf-gray-600);
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+// ONLY COLORS 
+.white-mode {
+    :host{
+        main {
+            background-color: var(--adf-gray-400);
+            .container {
+                .progress-bar {
+                    background: rgba(0, 0, 0, 0.04);
+                }
+            }
+        }
+    }
+}
+//ONLY COLORS
+.dark-mode {
+    :host {
+        main {
+            background-color: var(--adf-black-800);
+            .container {
+                span {
+                    color: var(--adf-white);    
+                }
+                .progress-bar {
+                    background: rgba(255, 255, 255, 0.08);
+                }
+            }
+            mat-card {
+                background-color: var(--adf-black-600);
+                color: var(--adf-white);
+                mat-card-content {
+                    p {
+                        color: var(--adf-white);
+                    }
+                }
             }
         }
     }

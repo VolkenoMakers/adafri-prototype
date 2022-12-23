@@ -1,39 +1,57 @@
 <div class="vh-100 vw-100 d-flex align-items-center justify-content-center position-relative">
+    <div class="container position-absolute lang-button">
+        <button mat-list-item matTooltip="{{ 'tooltips.languages.title' | translate }}" [matMenuTriggerFor]="languagesMenu">
+            <span class="material-symbols-outlined">translate</span>
+        </button>
+        <mat-menu #languagesMenu="matMenu">
+            <div class="container">
+                <h5 class="menu-title fw-bold">{{ 'tooltips.languages.title' | translate }}</h5>
+                <mat-divider class="mb-2"></mat-divider>
+                <div class="group-buttons">
+                    <div (click)="setLanguage('fr')" class="d-flex align-items-center dark-btn px-2 py-2 " [ngClass]="{'active-theme': actualLanguage === 'fr'}">
+                        <span>{{'tooltips.languages.french'|translate}}</span>
+                    </div>
+                    <div (click)="setLanguage('en')" [ngClass]="{'active-theme': actualLanguage === 'en'}" class="white-btn px-2 py-2 d-flex align-items-center">
+                        <span>{{'tooltips.languages.english'|translate}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
     <div class="row w-75 h-75 row-cols-1 row-cols-lg-2 text-center">
         <div class="col login-left">
             <div class="container-login w-100 text-start p-3">
-                <!-- <span class="material-symbols-outlined">play_arrow</span> -->
                 <img width="200" src="assets/images/a-adafri.svg" alt="adafri">
             </div>
         </div>
         <div class="col login-right">
             <div class="container-login">
-                <h3>S'identifier.</h3>
-                <h4>Bienvenue, veuillez entrer vos coordonnées.</h4>
+                <h3>{{'login.title'|translate}}</h3>
+                <h4>{{'login.subtitle'|translate}}</h4>
                 <div class="form">
                     <div class="inputs">
                         <input type="text" name="login" placeholder="mail@xyz.com" class="w-100">
-                        <input type="text" name="password" placeholder="mot de passe" class="w-100">
+                        <input type="text" name="password" placeholder="{{'login.password'|translate}}" class="w-100">
                     </div>
-                    <div class="text-end mb-5">
-                        <a href="">Mot de passe oublie ?</a>
+                    <div class="text-end mb-3">
+                        <a href="">{{'login.password_forgotten'|translate}}</a>
                     </div>
-                    <button *ngIf="!isLoading" class="submit-btn w-100" (click)="login()">Connexion</button>
+                    <button *ngIf="!isLoading" class="submit-btn w-100" (click)="login()">{{'login.submit'|translate}}</button>
                     <div *ngIf="isLoading" class="spinner py-2">
                         <mat-spinner [diameter]="50"></mat-spinner>
                     </div>
                 </div>
-                <div class="divider position-relative my-4">
+                <div class="divider position-relative my-3">
                     <mat-divider></mat-divider>
-                    <span class="position-absolute">OU</span>
+                    <span class="position-absolute">{{'login.or'|translate}}</span>
                 </div>
                 <button class="w-100" mat-button color="primary" >
                     <img width="20" src="assets/images/google.png" alt="adafri">
-                    <span>Connectez-vous avec Google</span>
+                    <span>{{'login.login_btn_google'|translate}}</span>
                 </button>
                 
                 <div class="mt-2 register d-flex align-items-center justify-content-center">
-                    <span>Vous n'avez pas de compte? </span><button (click)="register()">Inscription</button>
+                    <span>{{'login.dont_have_account'|translate}} </span><button (click)="register()">Inscription</button>
                 </div>
             </div>
         </div>

@@ -11,7 +11,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MainNavbarComponent, SearchDialog } from './components/main-navbar/main-navbar.component';
 import { AdfBtnComponent } from './components/adf-btn/adf-btn.component';
 import { FormsModule } from '@angular/forms';
-import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -23,15 +22,18 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NoInternetComponent } from './components/no-internet/no-internet.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ThemesService } from './services/themes/themes.service';
+import { NeedHelpComponent } from './components/need-help/need-help.component';
+import { DateRangePickerComponent } from './components/date-range-picker/date-range-picker.component';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 
-export function createTranslateLoader(httpClient:HttpClient){
-   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json')
-}
+
 @NgModule({
   declarations: [
+    DateRangePickerComponent,
+    NeedHelpComponent,
     NoInternetComponent,
     MainNavbarComponent,
     AdfBtnComponent,
@@ -59,16 +61,17 @@ export function createTranslateLoader(httpClient:HttpClient){
     RouterModule,
     Ng2GoogleChartsModule,
     MatTooltipModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    }),
-    NgxDaterangepickerMd.forRoot()
+    TranslateModule,
+    NgxDaterangepickerMd
   ], 
+  providers: [
+    ThemesService
+  ],
   exports: [
+    NgxDaterangepickerMd,
+    DateRangePickerComponent,
+    NeedHelpComponent,
+    MatMenuModule,
     NoInternetComponent,
     LoadingPageComponent,
     HttpClientModule,
@@ -88,6 +91,8 @@ export function createTranslateLoader(httpClient:HttpClient){
     MainNavbarComponent,
     MatFormFieldModule,
     AdfBtnComponent,
+    Ng2GoogleChartsModule,
+    MatTooltipModule,
   ]
 })
 export class CoreModule { }

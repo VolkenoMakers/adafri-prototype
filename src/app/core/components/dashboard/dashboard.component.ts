@@ -19,10 +19,21 @@ export class DashboardComponent implements AfterViewInit {
       ['23h',  1030,      540]
     ],
     options: {
-      'title': 'Campagnes',
+      'backgroundColor':  { fill:'transparent' },
+      // 'title': 'Campagnes',
+      // 'titleColor': '#FFF',
       'colors': ['#0077B6', '#48CAE4'],
       'chartArea' : { left: 0, width: '100%' },
-      'legend':'bottom',
+      'legend': {
+        'position': 'bottom',
+        // 'color': '#FFF'
+      },
+      // 'legendColor': '#FFF',
+      // 'hAxis': {
+      //   'textStyle': {
+      //     'color': '#FFF'
+      //   }
+      // }
     },
   };
 

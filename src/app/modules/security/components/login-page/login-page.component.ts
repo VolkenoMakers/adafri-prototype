@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { LanguageService } from 'src/app/core/services/langages/language.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor (
+    private router: Router,
+    public languageService: LanguageService,
+    ) { 
+    this.actualLanguage = this.languageService.userLanguage
+  }
 
   public isLoading: boolean = false;
+  public actualLanguage: string = 'fr'
   
   ngOnInit(): void {
   }
@@ -24,5 +30,11 @@ export class LoginPageComponent implements OnInit {
 
   register(){
     this.router.navigate(['security/register'])
+  }
+  
+  setLanguage(language: string){
+    if(this.languageService.userLanguage === language) return
+    this.actualLanguage = language
+    this.languageService.setLanguage(language)
   }
 }

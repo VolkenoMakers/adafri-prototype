@@ -1,4 +1,4 @@
-<app-loading-page *ngIf="isLoading"></app-loading-page>
+<!-- <app-loading-page *ngIf="isLoading"></app-loading-page>  -->
 <app-main-navbar></app-main-navbar>
 <div class="toggle-btn" (click)="toggleSidebar(); drawer.toggle()">
   <span class="material-symbols-outlined" *ngIf="!isToggled">chevron_left</span>
@@ -10,16 +10,26 @@
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
       <mat-nav-list>
-        <a mat-list-item routerLinkActive="active" routerLink="/overview">Vue d'ensemble</a>
-        <a mat-list-item routerLinkActive="active" routerLink="/transactions">Transactions</a>
-        <a mat-list-item routerLinkActive="active" routerLink="/campaign/list"> Campagnes</a>
-        <a mat-list-item routerLinkActive="active" routerLink="/setting/account-access"> Paramètres</a>
-        <a mat-list-item routerLinkActive="active" routerLink="/files/display"> Fichiers</a>
+        <a mat-list-item routerLinkActive="active" routerLink="/overview">
+          {{ 'navigation.aside.overview' | translate }}
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/transactions">
+          {{ 'navigation.aside.transactions' | translate }}
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/campaign/list">
+          {{ 'navigation.aside.campaigns' | translate }}
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/setting/account-access"> 
+          {{ 'navigation.aside.settings' | translate }}
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/files/display">
+          {{ 'navigation.aside.files' | translate }}
+        </a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <!-- Add Content Here -->
+    <mat-sidenav-content class="position-relative">
       <router-outlet></router-outlet>
+      <app-need-help class="position-fixed"></app-need-help>
     </mat-sidenav-content>
 </mat-sidenav-container>
   

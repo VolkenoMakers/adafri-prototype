@@ -1,0 +1,28 @@
+:host {
+    .input-container {
+        cursor: pointer;
+        border: 1.5px solid var(--adf-gray-600);
+        border-radius: 2px;
+        input {
+            font-size: 14px !important;
+            padding-left: 10px;
+            cursor: pointer;
+            outline: none !important;
+            font-weight: 400;
+            border: none;
+            background-color: transparent !important;
+            color: var(--adf-gray-600);
+            // background-color: red !important;
+        }
+        .icon {
+            span {
+                color: var(--adf-gray-600);
+            }
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

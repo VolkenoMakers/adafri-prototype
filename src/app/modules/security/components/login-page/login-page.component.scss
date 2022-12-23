@@ -2,6 +2,21 @@
     .d-flex {
         background-color: var(--adf-gray-400);
     }
+    .lang-button {
+        right: 20px;
+        top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            background-color: transparent;
+            border: none;
+            color: var(--adf-blue-700);
+            transition: all ease-in-out .3s;
+        }
+        button:hover {
+            color: var(--adf-blue-600);
+        }
+    }
     .row{
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 7px;
@@ -62,16 +77,22 @@
                 }
             }
             .form {
+                .text-end {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
                 .inputs{
                     input {
                         border: none;
-                        border-bottom: 1px solid var(--adf-gray-500);
+                        border-bottom: 1.3px solid var(--adf-gray-500);
                         margin-bottom: 20px;
                         height: 44px;
                         padding-left: 10px;
+                        outline: none;
+                        transition: all ease-in-out .1s;
                     }
                     input:focus{
-                        outline: none;
+                        border-bottom: 2px solid var(--adf-blue-600);
                     }
                 }
                 a {

@@ -11,42 +11,42 @@ export class NewCampaignComponent implements OnInit {
   public objectifs: any[] = [
     {
       'icon': 'sell',
-      'title': 'Ventes',
+      'title': 'sales',
       'description': 'Générer des ventes en ligne, via une application, par téléphone ou en magasin'
     },
     {
       'icon': 'group',
-      'title': 'Prospects',
+      'title': 'prospects',
       'description': 'Attirer les prospects et générer d\'autres conversions en encourageant les clients à passer à l\'action'
     },
     {
       'icon': 'ads_click',
-      'title': 'Trafic vers le site Web',
+      'title': 'trafic_to_website',
       'description': 'Attirer sur votre site Web les personnes intéressées par vos produits ou services'
     },
     {
       'icon': 'auto_awesome',
-      'title': 'Considération du produit et de la marque',
+      'title': 'promotion_product_brand',
       'description': 'Inciter les utilisateurs à découvrir vos produits ou services'
     },
     {
       'icon': 'campaign',
-      'title': 'Couverture et notoriété de la marque',
+      'title': 'brand_coverage_awareness',
       'description': 'Toucher une audience élargie et renforcer la notoriété de votre marque'
     },
     {
       'icon': 'phone_iphone',
-      'title': 'Toucher une audience élargie et renforcer la notoriété de votre marque',
+      'title': 'wider_audience',
       'description': 'Générer plus d\'installations, d\'engagement et de préinscriptions pour votre application'
     },
     {
       'icon': 'location_on',
-      'title': 'Promotions et visites en magasin',
+      'title': 'promotions_visits',
       'description': 'Attirer des visiteurs dans votre établissement (y compris un restaurant ou une concession automobile)'
     },
     {
       'icon': 'settings',
-      'title': 'Créer une campagne sans objectif spécifique',
+      'title': 'without_goal',
       'description': 'Choisir directement un type de campagne sans passer par les recommandations basées sur vos objectifs'
     },
   ]
@@ -54,22 +54,22 @@ export class NewCampaignComponent implements OnInit {
   public campaignTypes:any[] = [
     {
       'image': 'video.svg',
-      'title': 'video / image',
+      'title': 'ecran',
       'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' 
     },
     {
-      'image': 'chat.svg',
+      'image': 'phone.svg',
       'title': 'audio',
       'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
     },
     {
-      'image': 'phone.svg',
+      'image': 'chat.svg',
       'title': 'sms',
       'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
     },
     {
-      'image': 'phone.svg',
-      'title': 'site web',
+      'image': 'image.svg',
+      'title': 'web',
       'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
     }
   ]
@@ -79,20 +79,20 @@ export class NewCampaignComponent implements OnInit {
       'title': 'Facebook Ads',
       'badge': 'bêta',
       'description': 'Apparaissez dans le fil d\'actualité Facebook de votre public cible.',
-      'campaignType': this.campaignTypes[0]
+      'campaignType': this.campaignTypes[3]
     },
     {
       'image': 'google.svg',
       'title': 'Google Ads - Display',
       'description': 'Diffusez vos annonces illustrées sur des sites Web pertinents sur le Web.',
-      'campaignType': this.campaignTypes[0]
+      'campaignType': this.campaignTypes[3]
     },
     {
       'image': 'linkedin.svg',
       'title': 'LinkedIn Ads',
       'badge': 'bientôt',
       'description': 'Apparaissez dans le fil d\'actualité LinkedIn de votre public cible.',
-      'campaignType': this.campaignTypes[0]
+      'campaignType': this.campaignTypes[3]
     },
     {
       'image': 'billboards.svg',
@@ -150,6 +150,16 @@ export class NewCampaignComponent implements OnInit {
       return this.selectedObjectif = undefined
     }
     this.selectedObjectif = this.objectifs[index]
+    // AUTO SELECT CAMPAIGN TYPE
+    setTimeout(() => {
+      if (this.selectedObjectif.title === 'sales') this.selectCampaignType(0)
+      if (this.selectedObjectif.title === 'prospects') this.selectCampaignType(3)
+      if (this.selectedObjectif.title === 'trafic_to_website') this.selectCampaignType(3)
+      if (this.selectedObjectif.title === 'promotion_product_brand') this.selectCampaignType(3)
+      if (this.selectedObjectif.title === 'brand_coverage_awareness') this.selectCampaignType(0)
+      if (this.selectedObjectif.title === 'wider_audience') this.selectCampaignType(2)
+      if (this.selectedObjectif.title === 'promotions_visits') this.selectCampaignType(3)
+    }, 200);
     this.progressValue = 33;
     this.scrollDown()
   }
@@ -160,6 +170,15 @@ export class NewCampaignComponent implements OnInit {
       return this.selectedCampaignType = undefined
     }
     this.selectedCampaignType = this.campaignTypes[index]
+
+    // AUTO SELECT BROADCAST CHANNEL
+    setTimeout(() => {
+      if (this.selectedCampaignType.title === 'ecran') this.selectBroadcastChannel(3)
+      if (this.selectedCampaignType.title === 'audio') this.selectBroadcastChannel(4)
+      if (this.selectedCampaignType.title === 'sms') this.selectBroadcastChannel(5)
+      if (this.selectedCampaignType.title === 'web') this.selectBroadcastChannel(8)
+    }, 200);
+
     this.selectedBroadcastChannel = undefined
     this.progressValue = 66
     this.scrollDown()
@@ -182,6 +201,7 @@ export class NewCampaignComponent implements OnInit {
     this.router.navigate(['/overview'])
   }
   createCampaign(){
-    alert(this.campaignName)
+    // SAVE DRAFT
+    this.router.navigate(['/campaign/list'])
   }
 }

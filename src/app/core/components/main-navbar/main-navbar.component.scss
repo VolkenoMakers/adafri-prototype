@@ -5,7 +5,7 @@
     mat-toolbar{
         z-index: 99;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        background-color: var(--adf-gray-500);
+        // background-color: var(--adf-gray-500);
         .search-bar{
             top: 10px;
             right: 50%;
@@ -29,5 +29,87 @@
             color: var(--adf-blue-600);
         }
     }
-    
+}
+::ng-deep.mat-menu-panel {
+    min-width: 300px !important;
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img-container {
+            img {
+                border: 2px solid var(--adf-blue-600);
+                padding: 5px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: contain;
+
+            }
+        }
+    }
+    .menu-title {
+        font-size:15px;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    .group-buttons {
+        .d-flex {
+            cursor: pointer;
+            margin-bottom: 5px;
+            border-radius: 7px;
+            font-weight: 500;
+            min-height: 43px;
+            color: var(--adf-gray-800);
+            transition: all .3s ease-in-out;
+        }
+        .d-flex:hover {
+            background-color: var(--adf-gray-400);
+        }
+        .active-theme{
+            background-color: var(--adf-gray-400);
+        }
+        img {
+            width: 60px;
+        }
+    }
+    .logout-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        height: 45px;
+        background-color: var(--adf-red-800);
+        border-radius: 25px;
+        font-weight: 500;
+        color: var(--adf-white);
+        font-size: 15px;
+        transition: all .3s ease-in-out;
+    }
+    .logout-btn:hover{
+        background-color: var(--adf-red-900);
+    }
+}
+
+// ONLY COLORS
+.white-mode {
+    :host {
+        mat-toolbar{ 
+            background-color: var(--adf-gray-500);
+        }
+    }
+}
+// ONLY COLORS
+.dark-mode {
+    :host {
+        mat-toolbar{ 
+            background-color: var(--adf-black-900);
+            mat-menu {
+                background-color: var(--adf-black-900);
+                .menu-title {
+                    color: var(--adf-white);
+                }
+            }
+        }
+    }
 }

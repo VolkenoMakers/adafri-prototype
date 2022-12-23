@@ -1,1 +1,121 @@
-<p class="bg-danger">display-assets works!</p>
+<!-- <mat-toolbar>
+    <div class="container-fluid">
+        <div class="w-100 d-flex align-items-center justify-content-between h-100">
+            <span class="title">
+                {{ 'navigation.aside.files' | translate }}
+            </span>
+        </div>
+    </div>
+</mat-toolbar> -->
+<div class="container big-container pt-3">
+    <div class="row">
+        <div class="col col-9">
+            <div style="max-width: 190px;">
+                <app-adf-btn text="{{'navigation.file_manager.add_file'|translate}}" icon="add" (click)="uploadFile()"></app-adf-btn>
+            </div>
+            <div class="py-4">
+                <mat-card class="w-100  table-card">
+                    <ul class="nav nav-pills" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active text-uppercase" id="image-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">IMAGES</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link text-uppercase" id="video-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">VIDEOS</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-uppercase" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="files" aria-selected="false">CONTACTS</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-uppercase" id="audios-tab" data-bs-toggle="tab" data-bs-target="#audios" type="button" role="tab" aria-controls="audios" aria-selected="false">AUDIOS</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-uppercase" id="files-tab" data-bs-toggle="tab" data-bs-target="#files" type="button" role="tab" aria-controls="files" aria-selected="false">
+                                {{'navigation.file_manager.files'|translate}}
+                            </button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="py-3 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="image-tab">
+                            images
+                        </div>
+                        <div class="py-3 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="video-tab">
+                            videos
+                        </div>
+                        <div class="py-3 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            contcats
+                        </div>
+                        <div class="py-3 tab-pane fade" id="audios" role="tabpanel" aria-labelledby="audios-tab">
+                            my audios files
+                        </div>
+                        <div class="py-3 tab-pane fade" id="files" role="tabpanel" aria-labelledby="files-tab">
+                            vcard or excel for contacts
+                        </div>
+                      </div>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col col-3">
+            <div class="w-100 text-center py-2">
+                <span class="fw-bold title">{{'navigation.file_manager.storage'|translate}}</span>
+            </div>
+            <google-chart [data]="pieChart"></google-chart>
+            <div class="files-type-group">
+                <div class="file-type">
+                    <div class="container d-flex d-flex">
+                        <div class="d-icon d-flex align-items-center justify-content-center">
+                            <span class="material-symbols-outlined">image</span>
+                        </div>
+                        <div>
+                            <h4 class="m-0 fw-bold text-uppercase">image</h4>
+                            <p class="m-0">15 {{'navigation.file_manager.files_detected'|translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-type">
+                    <div class="container d-flex">
+                        <div class="d-icon d-flex align-items-center justify-content-center">
+                            <span class="material-symbols-outlined">video_file</span>
+                        </div>
+                        <div>
+                            <h4 class="m-0 fw-bold text-uppercase">Video</h4>
+                            <p class="m-0">15 {{'navigation.file_manager.files_detected'|translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-type">
+                    <div class="container d-flex">
+                        <div class="d-icon d-flex align-items-center justify-content-center">
+                            <span class="material-symbols-outlined">contacts</span>
+                        </div>
+                        <div>
+                            <h4 class="m-0 fw-bold text-uppercase">Contacts</h4>
+                            <p class="m-0">1500 {{'navigation.file_manager.contacts_detected'|translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-type">
+                    <div class="container d-flex">
+                        <div class="d-icon d-flex align-items-center justify-content-center">
+                            <span class="material-symbols-outlined">audio_file</span>
+                        </div>
+                        <div>
+                            <h4 class="m-0 fw-bold text-uppercase">AUDIOS</h4>
+                            <p class="m-0">15 {{'navigation.file_manager.files_detected'|translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-type">
+                    <div class="container d-flex">
+                        <div class="d-icon d-flex align-items-center justify-content-center">
+                            <span class="material-symbols-outlined">home_storage</span>
+                        </div>
+                        <div>
+                            <h4 class="m-0 fw-bold text-uppercase">{{'navigation.file_manager.files'|translate}}</h4>
+                            <p class="m-0">15 {{'navigation.file_manager.files_detected'|translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
