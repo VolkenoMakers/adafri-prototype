@@ -55,6 +55,35 @@ mat-toolbar {
 
 .dashboard-card-content {
   text-align: center;
+  .description {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 22px;
+    right: 10px;
+    top: 15px;
+  }
+  .tiles{
+    max-height: 280px;
+    overflow-y: scroll;
+    .single-tile {
+      border-bottom: 1px solid var(--adf-gray-400);
+      border-radius: 3px;
+      margin-bottom: 10px;
+      padding: 5px;
+      min-height: 54px;
+      a {
+        text-decoration: none;
+      }
+      .icon {
+        width: 30px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
 }
 
 .mat-card-header{
@@ -145,6 +174,16 @@ mat-card-title{
         color: var(--adf-gray-600);
       }
     }
+    .dashboard-card-content {
+      .description {
+        color: var(--adf-gray-600);
+       }
+      .tiles {
+        .single-tile {
+          background-color: var(--adf-gray-400);
+        }
+      }
+    }
   }
 }
 .dark-mode {
@@ -180,6 +219,16 @@ mat-card-title{
           .days-title, .date-range {
             color: var(--adf-white);
           }
+      }
+      .dashboard-card-content {
+        .description {
+          color: var(--adf-white);
+        }
+        .tiles{
+          .single-tile {
+            background-color: var(--adf-gray-800);
+          }
+        }
       }
   }
 }

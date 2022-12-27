@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../services/langages/language.service';
@@ -7,7 +7,8 @@ import { ThemesService } from '../../services/themes/themes.service';
 @Component({
   selector: 'app-main-navbar',
   templateUrl: './main-navbar.component.html',
-  styleUrls: ['./main-navbar.component.scss']
+  styleUrls: ['./main-navbar.component.scss'],
+  // encapsulation: ViewEncapsulation,
 })
 export class MainNavbarComponent implements OnInit {
 

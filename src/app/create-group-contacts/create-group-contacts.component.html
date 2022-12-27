@@ -1,0 +1,7 @@
+<div class="container" *ngIf="contacts">
+    Contacts selectionnes : <br>
+    <ul *ngFor="let contact of contacts|keyvalue">
+        <!-- <li>{{ contact.firstname }} {{ contact.lastname }} - {{ contact.phone_number }}</li> -->
+    </ul>
+    {{contacts|json}}
+</div> 

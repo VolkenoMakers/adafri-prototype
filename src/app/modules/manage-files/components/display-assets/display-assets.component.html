@@ -11,11 +11,11 @@
     <div class="row">
         <div class="col col-9">
             <div style="max-width: 190px;">
-                <app-adf-btn text="{{'navigation.file_manager.add_file'|translate}}" icon="add" (click)="uploadFile()"></app-adf-btn>
+                <app-adf-btn text="{{'navigation.file_manager.add_file'|translate}}" icon="attach_file_add" (click)="uploadFile()"></app-adf-btn>
             </div>
             <div class="py-4">
                 <mat-card class="w-100  table-card">
-                    <ul class="nav nav-pills" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link active text-uppercase" id="image-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">IMAGES</button>
                         </li>
@@ -34,21 +34,192 @@
                             </button>
                         </li>
                       </ul>
+                      <p class="text-center fw-bold">
+                        {{'navigation.file_manager.only_needed_files'|translate}}
+                      </p>
                       <div class="tab-content" id="myTabContent">
-                        <div class="py-3 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="image-tab">
-                            images
+                        <div class="pt-1 pb-3 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="image-tab">
+                            <div class="container">
+                                <div class="row row-cols-4 g-3 files-container">
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="py-3 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="video-tab">
-                            videos
+                            <div class="container">
+                                <div class="row row-cols-4 g-3 files-container">
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="py-3 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            contcats
+                        <div class="pb-3 tab-pane fade position-relative" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="position-absolute d-flex justify-content-end" style="right: 0; top: -4px;">
+                                <app-adf-btn class="add-contact-btn" icon="person" text="Créer contact" (click)="createContact()"></app-adf-btn>
+                                <app-adf-btn class="add-contact-btn" icon="groups" text="Créer groupe" [isDisabled]="!isCreateGroupActive" (click)="createGroupContact()"></app-adf-btn>
+                            </div>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#all-contacts-pane" type="button" role="tab" aria-controls="all-contacts-pane" aria-selected="true">Tous les contacts</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Tous les groupes de contacts</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content tab-contacts" id="myTabContent">
+                                <div class="tab-pane fade show active" id="all-contacts-pane" role="tabpanel" aria-labelledby="all-contacts-tab" tabindex="0">
+                                    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                                        <!-- Checkbox Column -->
+                                        <ng-container matColumnDef="select">
+                                            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                            <mat-cell *matCellDef="let row">
+                                                <mat-checkbox color="primary" (click)="$event.stopPropagation()" (change)="selectHandler(row)"
+                                                    [checked]="selection.isSelected(row)">
+                                                </mat-checkbox>
+                                            </mat-cell>
+                                        </ng-container>
+                                
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="position">
+                                            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                                            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                                        </ng-container>
+                                
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="firstname">
+                                            <mat-header-cell *matHeaderCellDef> Prénom </mat-header-cell>
+                                            <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+                                        </ng-container>
+                                
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="lastname">
+                                            <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+                                            <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+                                        </ng-container>
+                                
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="phone_number">
+                                            <mat-header-cell *matHeaderCellDef> Numéro de téléphone </mat-header-cell>
+                                            <mat-cell *matCellDef="let element"> {{element.phone_number}} </mat-cell>
+                                        </ng-container>
+
+                                        <!-- Actions Column -->
+                                        <ng-container matColumnDef="actions" >
+                                            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                                            <mat-cell *matCellDef="let element"> 
+                                                <div class="container">
+                                                    <button mat-icon-button [matMenuTriggerFor]="singleContactMenu">
+                                                        <span class="material-symbols-outlined">more_vert</span> 
+                                                    </button>
+                                                    <mat-menu #singleContactMenu="matMenu">
+                                                        <button mat-menu-item class="d-flex align-items-center text-nowrap">
+                                                            <span class="material-symbols-outlined">edit</span> 
+                                                            <span class="mx-2">Modifier</span>
+                                                        </button>
+                                                        <button mat-menu-item class="d-flex align-items-center text-nowrap">
+                                                            <span class="material-symbols-outlined">delete</span> 
+                                                            <span class="mx-2">Supprimer</span>
+                                                        </button>
+                                                    </mat-menu>
+                                                </div>
+                                            </mat-cell>
+                                        </ng-container>
+                                
+                                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                        <mat-row *matRowDef="let row; columns: displayedColumns;">
+                                        </mat-row>
+                                    </mat-table>
+                                    <mat-paginator [pageSizeOptions]="[10, 20]"
+                                                    showFirstLastButtons
+                                                    aria-label="Select page of periodic elements">
+                                    </mat-paginator>
+                                </div>
+                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">Tous les groupes de contacts</div>
+                            </div>
                         </div>
                         <div class="py-3 tab-pane fade" id="audios" role="tabpanel" aria-labelledby="audios-tab">
                             my audios files
                         </div>
                         <div class="py-3 tab-pane fade" id="files" role="tabpanel" aria-labelledby="files-tab">
-                            vcard or excel for contacts
+                            <div class="container">
+                                <div class="row row-cols-4 g-3 files-container">
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                    <div class="col">
+                                        <app-single-media-card></app-single-media-card>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                       </div>
                 </mat-card>

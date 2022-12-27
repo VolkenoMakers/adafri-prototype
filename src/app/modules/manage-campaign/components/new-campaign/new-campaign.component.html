@@ -5,21 +5,21 @@
         </div>
         <h2 class="mt-5 mb-3 animate__animated animate__backInLeft d-flex align-items-center">
             <span class="material-symbols-outlined">settings</span>
-            <span class="mx-1"> Configuration de base</span>
+            <span class="mx-1"> {{'campaign.basic_setup'|translate}}</span>
         </h2>
         <mat-card class="w-100">
             <mat-card-content>
-                <h4 class="animate__animated animate__backInLeft">Choisissez votre objectif</h4>
+                <h4 class="animate__animated animate__backInLeft">{{'campaign.choose_goal.title'|translate}}</h4>
                 <mat-divider></mat-divider>
                 <p class="pt-3 animate__animated animate__backInLeft">
-                    Sélectionnez un objectif pour adapter votre expérience aux objectifs et paramètres les plus efficaces pour votre campagne
+                    {{'campaign.choose_goal.description'|translate}}
                 </p>
                 <div class="objectifs-cards row row-cols-2 row-cols-lg-4 g-lg-4">
                     <div class="col" *ngFor="let objectif of objectifs; let index = index" (click)="selectObjectif(index)">
                         <div class="object-card px-3 pt-2" [ngClass]="{'selected-objectif': objectif === selectedObjectif}">
                             <span class="material-symbols-outlined" tooltip="ok">{{objectif.icon}}</span>
-                            <h4 class="my-2 animate__animated animate__backInLeft">{{objectif.title}}</h4>
-                            <p class="animate__animated animate__backInLeft">{{objectif.description}}</p>
+                            <h4 class="my-2 animate__animated animate__backInLeft">{{objectif.title|translate}}</h4>
+                            <p class="animate__animated animate__backInLeft">{{objectif.description|translate}}</p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
         </mat-card>
 
         <mat-card class="w-100 mt-5" *ngIf="selectedObjectif">
-            <h4 class="animate__animated animate__backInLeft">Sélectionnez un type de campagne</h4>
+            <h4 class="animate__animated animate__backInLeft">{{'campaign.choose_campaign_type.title'|translate}}</h4>
             <mat-divider></mat-divider>
             <div class="py-2 mt-1 objectifs-cards row row-cols-2 row-cols-lg-4 g-lg-4">
                 <div class="col" *ngFor="let type of campaignTypes; let index = index" (click)="selectCampaignType(index)">
@@ -41,10 +41,10 @@
         </mat-card>
 
         <mat-card class="w-100 mt-5" *ngIf="selectedCampaignType">
-            <h4 class="animate__animated animate__backInLeft">Sélectionnez un canal de diffusion</h4>
+            <h4 class="animate__animated animate__backInLeft">{{'campaign.choose_broadcast_channel.title'|translate}}</h4>
             <mat-divider></mat-divider>
             <p class="py-3 animate__animated animate__backInLeft">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid.
+                {{'campaign.choose_broadcast_channel.description'|translate}}
             </p>
             <div class="objectifs-cards broadcast-channels row row-cols-2 row-cols-lg-4 g-lg-4">
                 <ng-container *ngFor="let broadcastChannel of broadcastChannels; let index = index">
@@ -61,18 +61,20 @@
         </mat-card>
 
         <mat-card class="w-100 mt-5" *ngIf="selectedBroadcastChannel">
-            <h4 class="animate__animated animate__backInLeft">Choisissez un nom pour la campagne</h4>
+            <h4 class="animate__animated animate__backInLeft">
+                {{"campaign.choose_campaign_name.title"|translate}}
+            </h4>
             <mat-divider></mat-divider>
             <p class="pt-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                {{"campaign.choose_campaign_name.description"|translate}}
             </p>
             <input type="text" class="w-100 mb-2 name-input" [(ngModel)]="campaignName">
         </mat-card>
 
         <div class="actions-btn d-flex justify-content-end align-items-center my-3">
-            <app-adf-btn class="mx-2" text="Annuler" [isOutlined]='true' (click)="cancelCampaign()"></app-adf-btn>
-            <app-adf-btn text="Créer campagne" [isDisabled]="true" *ngIf="campaignName.length < 5 || selectedBroadcastChannel === undefined"></app-adf-btn>
-            <app-adf-btn text="Créer campagne" *ngIf="campaignName.length > 5 && selectedBroadcastChannel !== undefined" (click)="createCampaign()"></app-adf-btn>
+            <app-adf-btn class="mx-2" text="{{'buttons.cancel'|translate}}" [isOutlined]='true' (click)="cancelCampaign()"></app-adf-btn>
+            <app-adf-btn text="{{'buttons.create_campaign'|translate}}" [isDisabled]="true" *ngIf="campaignName.length < 5 || selectedBroadcastChannel === undefined"></app-adf-btn>
+            <app-adf-btn text="{{'buttons.create_campaign'|translate}}" *ngIf="campaignName.length > 5 && selectedBroadcastChannel !== undefined" (click)="createCampaign()"></app-adf-btn>
         </div>
     </div>
 </main>

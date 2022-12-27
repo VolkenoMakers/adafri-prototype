@@ -12,7 +12,7 @@
           <span>6 - 12 dec. 2022</span>
           <span class="material-symbols-outlined">arrow_drop_down</span>
         </div>
-        <app-date-range-picker></app-date-range-picker>
+        <!-- <app-date-range-picker></app-date-range-picker> -->
         <span class="days-title mx-2"> 
           <button mat-button color="primary">
             {{ 'navigation.dashboard.date.show_last_30_days' | translate }}
@@ -23,10 +23,11 @@
   </div>
 </mat-toolbar>
 <div class="grid-container m-0 pt-2">
-  <div class="mx-3" style="max-width: 190px;">
+  <div class="mx-3" style="max-width: 230px;">
     <app-adf-btn [matMenuTriggerFor]="menuNewCamp" 
       text="{{ 'campaign.new' | translate }}" 
-      class="new-camp-btn">
+      class="new-camp-btn" icon="add_notes">
+      
     </app-adf-btn>
   </div>
   <mat-menu #menuNewCamp="matMenu" class="mx-3 mt-2 px-0">
@@ -34,7 +35,7 @@
       <span>{{ 'campaign.new' | translate }}</span>
     </button>
     <button mat-menu-item class="d-flex align-items-center">
-      <span> Reprendre une campagne brouillon</span>
+      <span class="text-nowrap"> Reprendre une campagne brouillon</span>
     </button>
   </mat-menu>
   <mat-grid-list cols="12" rowHeight="420px">
@@ -64,12 +65,16 @@
                 <span class="material-symbols-outlined">ads_click</span>
               </div>
               <div class="info-card nb-camp">
-                <h5 class="text-nowrap">{{ 'navigation.dashboard.ads_performance.cond_camps' | translate }}</h5>
+                <h5 class="text-nowrap" matTooltip="{{ 'navigation.dashboard.ads_performance.cond_camps_full' | translate }}">
+                  {{ 'navigation.dashboard.ads_performance.cond_camps' | translate }}
+                </h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">numbers</span>
               </div>
               <div class="info-card cpc-moy">
-                <h5>{{ 'navigation.dashboard.ads_performance.average_costs' | translate }}</h5>
+                <h5 matTooltip="{{ 'navigation.dashboard.ads_performance.average_costs_full' | translate }}">
+                  {{ 'navigation.dashboard.ads_performance.average_costs' | translate }}
+                </h5>
                 <span class="value">55</span>
                 <span class="material-symbols-outlined">attach_money</span>
               </div>
@@ -133,8 +138,99 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
-            <img src="assets/images/empty.svg" alt="adafri">
-            <p>{{ 'campaign.no_data' | translate }}</p>
+            <div class="d-none">
+              <img src="assets/images/empty.svg" alt="adafri">
+              <p>{{ 'campaign.no_data' | translate }}</p>
+            </div>
+            <div class="w-100">
+              <p class="description fw-bold text-start m-0 mb-2">{{ 'navigation.dashboard.billing.description' | translate }}</p>
+              <div class="tiles w-100">
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100 position-relative">
+                      <h4 class="m-0 p-0 fw-bold">Le 27 décembre 2022</h4>
+                      <span class="price mx-2 my-0 p-0 fw-bold text-uppercase position-absolute">500 $</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/transactions">{{'buttons.more_details'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
@@ -166,8 +262,8 @@
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
-                <span class="material-symbols-outlined">network_cell</span>
-                <span class="mx-2">{{ 'navigation.dashboard.networks.title' | translate }}</span>
+                <span class="material-symbols-outlined">edit_note</span>
+                <span class="mx-2">{{ 'navigation.dashboard.draft.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -179,8 +275,141 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
-            <img src="assets/images/empty.svg" alt="adafri">
-            <p>{{ 'campaign.no_data' | translate }}</p>
+            <div class="d-none">
+              <img src="assets/images/empty.svg" alt="adafri">
+              <p>{{ 'campaign.no_data' | translate }}</p>
+            </div>
+            <div class="w-100">
+              <p class="description fw-bold text-start m-0 mb-2">{{ 'navigation.dashboard.draft.description' | translate }}</p>
+              <div class="tiles w-100">
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-tile d-flex w-100">
+                  <div class="icon">
+                    <span class="material-symbols-outlined">pending_actions</span>
+                  </div>
+                  <div class="infos w-100 h-100">
+                    <div class="mx-2 d-flex justify-content-between w-100">
+                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
+                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
+                    </div>
+                    <div class="text-start w-100 px-2">
+                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>

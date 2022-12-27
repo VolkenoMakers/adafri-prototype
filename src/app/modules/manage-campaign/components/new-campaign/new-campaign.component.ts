@@ -11,43 +11,43 @@ export class NewCampaignComponent implements OnInit {
   public objectifs: any[] = [
     {
       'icon': 'sell',
-      'title': 'sales',
-      'description': 'Générer des ventes en ligne, via une application, par téléphone ou en magasin'
+      'title': 'campaign.sales.title',
+      'description': 'campaign.sales.description'
     },
     {
       'icon': 'group',
-      'title': 'prospects',
-      'description': 'Attirer les prospects et générer d\'autres conversions en encourageant les clients à passer à l\'action'
+      'title': 'campaign.prospects.title',
+      'description': 'campaign.prospects.description'
     },
     {
       'icon': 'ads_click',
-      'title': 'trafic_to_website',
-      'description': 'Attirer sur votre site Web les personnes intéressées par vos produits ou services'
+      'title': 'campaign.trafic_to_website.title',
+      'description': 'campaign.trafic_to_website.description'
     },
     {
       'icon': 'auto_awesome',
-      'title': 'promotion_product_brand',
-      'description': 'Inciter les utilisateurs à découvrir vos produits ou services'
+      'title': 'campaign.promotion_product_brand.title',
+      'description': 'campaign.promotion_product_brand.description'
     },
     {
       'icon': 'campaign',
-      'title': 'brand_coverage_awareness',
-      'description': 'Toucher une audience élargie et renforcer la notoriété de votre marque'
+      'title': 'campaign.brand_coverage_awareness.title',
+      'description': 'campaign.brand_coverage_awareness.description'
     },
     {
       'icon': 'phone_iphone',
-      'title': 'wider_audience',
-      'description': 'Générer plus d\'installations, d\'engagement et de préinscriptions pour votre application'
+      'title': 'campaign.promote_app.title',
+      'description': 'campaign.promote_app.description'
     },
     {
       'icon': 'location_on',
-      'title': 'promotions_visits',
-      'description': 'Attirer des visiteurs dans votre établissement (y compris un restaurant ou une concession automobile)'
+      'title': 'campaign.promotions_visits.title',
+      'description': 'campaign.promotions_visits.description'
     },
     {
       'icon': 'settings',
-      'title': 'without_goal',
-      'description': 'Choisir directement un type de campagne sans passer par les recommandations basées sur vos objectifs'
+      'title': 'campaign.without_goal.title',
+      'description': 'campaign.without_goal.description'
     },
   ]
 
@@ -151,15 +151,15 @@ export class NewCampaignComponent implements OnInit {
     }
     this.selectedObjectif = this.objectifs[index]
     // AUTO SELECT CAMPAIGN TYPE
-    setTimeout(() => {
-      if (this.selectedObjectif.title === 'sales') this.selectCampaignType(0)
-      if (this.selectedObjectif.title === 'prospects') this.selectCampaignType(3)
-      if (this.selectedObjectif.title === 'trafic_to_website') this.selectCampaignType(3)
-      if (this.selectedObjectif.title === 'promotion_product_brand') this.selectCampaignType(3)
-      if (this.selectedObjectif.title === 'brand_coverage_awareness') this.selectCampaignType(0)
-      if (this.selectedObjectif.title === 'wider_audience') this.selectCampaignType(2)
-      if (this.selectedObjectif.title === 'promotions_visits') this.selectCampaignType(3)
-    }, 200);
+    // setTimeout(() => {
+    //   if (this.selectedObjectif.title === 'sales') this.selectCampaignType(0)
+    //   if (this.selectedObjectif.title === 'prospects') this.selectCampaignType(3)
+    //   if (this.selectedObjectif.title === 'trafic_to_website') this.selectCampaignType(3)
+    //   if (this.selectedObjectif.title === 'promotion_product_brand') this.selectCampaignType(3)
+    //   if (this.selectedObjectif.title === 'brand_coverage_awareness') this.selectCampaignType(0)
+    //   if (this.selectedObjectif.title === 'wider_audience') this.selectCampaignType(2)
+    //   if (this.selectedObjectif.title === 'promotions_visits') this.selectCampaignType(3)
+    // }, 200);
     this.progressValue = 33;
     this.scrollDown()
   }
@@ -172,12 +172,12 @@ export class NewCampaignComponent implements OnInit {
     this.selectedCampaignType = this.campaignTypes[index]
 
     // AUTO SELECT BROADCAST CHANNEL
-    setTimeout(() => {
-      if (this.selectedCampaignType.title === 'ecran') this.selectBroadcastChannel(3)
-      if (this.selectedCampaignType.title === 'audio') this.selectBroadcastChannel(4)
-      if (this.selectedCampaignType.title === 'sms') this.selectBroadcastChannel(5)
-      if (this.selectedCampaignType.title === 'web') this.selectBroadcastChannel(8)
-    }, 200);
+    // setTimeout(() => {
+    //   if (this.selectedCampaignType.title === 'ecran') this.selectBroadcastChannel(3)
+    //   if (this.selectedCampaignType.title === 'audio') this.selectBroadcastChannel(4)
+    //   if (this.selectedCampaignType.title === 'sms') this.selectBroadcastChannel(5)
+    //   if (this.selectedCampaignType.title === 'web') this.selectBroadcastChannel(8)
+    // }, 200);
 
     this.selectedBroadcastChannel = undefined
     this.progressValue = 66

@@ -10,12 +10,12 @@ import moment from 'moment';
 export class DateRangePickerComponent implements OnInit {
   
   public ranges: any = {
-    'Today': [moment(), moment()],
-    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-    'This Month': [moment().startOf('month'), moment().endOf('month')],
-    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    'Aujourd\'hui': [moment(), moment()],
+    'Hier': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Les 7 derniers jours': [moment().subtract(6, 'days'), moment()],
+    'Les 30 derniers jours': [moment().subtract(29, 'days'), moment()],
+    'Ce mois-ci': [moment().startOf('month'), moment().endOf('month')],
+    'Le mois dernier': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
   }
   public alwaysShowCalendars: boolean;
   public selected?: {startDate: dayjs.Dayjs, endDate: dayjs.Dayjs};
@@ -24,6 +24,7 @@ export class DateRangePickerComponent implements OnInit {
 
   constructor() {
     this.alwaysShowCalendars = true;
+    // this.selected = {startDate: new Dayjs(), endDate: Dayjs()}
    }
   ngOnInit(): void {
   

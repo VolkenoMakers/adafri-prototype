@@ -36,7 +36,7 @@
                     <div class="text-end mb-3">
                         <a href="">{{'login.password_forgotten'|translate}}</a>
                     </div>
-                    <button *ngIf="!isLoading" class="submit-btn w-100" (click)="login()">{{'login.submit'|translate}}</button>
+                    <button *ngIf="!isLoading" class="submit-btn w-100 mt-2" (click)="login()">{{'login.submit'|translate}}</button>
                     <div *ngIf="isLoading" class="spinner py-2">
                         <mat-spinner [diameter]="50"></mat-spinner>
                     </div>

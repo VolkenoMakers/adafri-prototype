@@ -1,0 +1,32 @@
+:host {
+    .file-single {
+        min-height: 200px;
+        border-radius: 7px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .toolbar {
+            opacity: .9;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-color: var(--adf-white);
+            display: flex;
+            justify-content: space-between;
+            button {
+                border: none;
+                background-color: transparent;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

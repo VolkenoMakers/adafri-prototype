@@ -22,7 +22,8 @@
         <a mat-list-item routerLinkActive="active" routerLink="/setting/account-access"> 
           {{ 'navigation.aside.settings' | translate }}
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/files/display">
+        <a mat-list-item routerLinkActive="active" routerLink="/files/display" 
+        matTooltip="{{ 'navigation.file_manager.title' | translate }}">
           {{ 'navigation.aside.files' | translate }}
         </a>
       </mat-nav-list>

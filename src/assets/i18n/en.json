@@ -1,16 +1,64 @@
 {
+    "no_internet": "No internet connection",
     "campaign": {
+        "basic_setup": "Basic Setup",
+        "choose_goal": {
+            "title": "Choose your goal",
+            "description": "Select an objective to tailor your experience to the most effective objectives and settings for your campaign"
+        },
+        "choose_campaign_type": {
+            "title": "Select a campaign type",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        }, 
+        "choose_broadcast_channel": {
+            "title": "Select a broadcast channel",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_campaign_name": {
+            "title": "Choose a name for the campaign",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
         "new": "New campaign",
         "no_data": "No data",
         "logout": "Sign out",
-        "sales": "Sales",
-        "prospects": "Prospects",
-        "trafic_to_website": "Trafic to website",
-        "promotion_product_brand": "Promotion product brand",
-        "brand_coverage_awareness": "Brand coverage awareness",
-        "wider_audience": "Wider audience",
-        "promotions_visits": "Promotions visits",
-        "without_goal": "Without goal"
+        "sales": {
+            "title": "Sales",
+            "description": "Generate sales online, via app, by phone or in-store"
+        },
+        "prospects": {
+            "title": "Leads",
+            "description": "Attract leads and drive further conversions by encouraging customers to take action"
+        },
+        "trafic_to_website": {
+            "title": "Traffic to website",
+            "description": "Attract people interested in your products or services to your website"
+        },
+        "promotion_product_brand": {
+            "title": "Product and brand consideration",
+            "description": "Encourage users to discover your products or services"
+        },
+        "brand_coverage_awareness": {
+            "title": "Brand coverage and awareness",
+            "description": "Reach a wider audience and strengthen your brand awareness"
+        },
+        "promote_app": {
+            "title": "Promoting an app",
+            "description": "Drive more installs, engagement, and pre-registrations for your app"
+        },
+        "promotions_visits": {
+            "title": "Promotions and store visits",
+            "description": "Attract visitors to your establishment (including a restaurant or car dealership)"
+        },
+        "without_goal": {
+            "title": "Create a campaign without a specific objective",
+            "description": "Choose a type of campaign directly without going through the recommendations based on your objectives"
+        }
+    },
+    "buttons": {
+        "create_campaign": "Create campaign",
+        "reactive_campaign": "Reactivate draft campaign",
+        "cancel": "Cancel",
+        "more_details": "More details"
     },
     "settings": {
         "appearance": "Appearence"
@@ -61,7 +109,9 @@
                 "title": "Advertising performance",
                 "clicks": "Clicks",
                 "cond_camps": "Camp. conducted",
+                "cond_camps_full": "Campaigns conducted",
                 "average_costs": "Average costs",
+                "average_costs_full": "Average costs",
                 "expenses": "Expenses",
                 "pay": "Pay"
             },
@@ -72,21 +122,28 @@
                 "recharge_account": "Recharge account"
             },
             "billing": {
-                "title": "Billing"
+                "title": "Billing",
+                "description": "Last payments made"
             }, 
             "search_keywords": {
                 "title": "Search keywords"
             },
             "networks": {
                 "title": "Networks"
+            },
+            "draft": {
+                "title": "Drafts",
+                "description": "Continue to create your campaigns"
             }
         },
         "file_manager": {
+            "title": "File manager",
             "add_file": "Upload file",
             "storage": "Storage",
             "files_detected": "detected files",
             "contacts_detected": "contacts detected",
-            "files": "files"
+            "files": "files",
+            "only_needed_files": "Upload only the files needed for your campaigns !"
         }
     }
 }

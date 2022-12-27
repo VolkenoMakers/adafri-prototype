@@ -1,16 +1,64 @@
 {
+    "no_internet": "Pas de connexion internet",
     "campaign": {
+        "basic_setup": "Configuration de base",
+        "choose_goal": {
+            "title": "Choisissez votre objectif",
+            "description": "Sélectionnez un objectif pour adapter votre expérience aux objectifs et paramètres les plus efficaces pour votre campagne"
+        },
+        "choose_campaign_type": {
+            "title": "Sélectionnez un type de campagne",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_broadcast_channel": {
+            "title": "Sélectionnez une chaîne de diffusion",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_campaign_name": {
+            "title": "Choisissez un nom pour la campagne",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
         "new": "Nouvelle campagne",
         "no_data": "Pas de données",
         "logout": "Se déconnecter",
-        "sales": "Ventes",
-        "prospects": "Prospects",
-        "trafic_to_website": "Traffic vers un site web",
-        "promotion_product_brand": "Promotion product brand",
-        "brand_coverage_awareness": "Brand coverage awareness",
-        "wider_audience": "Wider audience",
-        "promotions_visits": "Promotions visits",
-        "without_goal": "Without goal"
+        "sales": {
+            "title": "Ventes",
+            "description": "Générer des ventes en ligne, via une application, par téléphone ou en magasin"
+        },
+        "prospects": {
+            "title": "Prospects",
+            "description": "Attirer les prospects et générer d'autres conversions en encourageant les clients à passer à l'action"
+        },
+        "trafic_to_website": {
+            "title": "Trafic vers un site web",
+            "description": "Attirer sur votre site Web les personnes intéressées par vos produits ou services"
+        },
+        "promotion_product_brand": {
+            "title": "Considération du produit et de la marque",
+            "description": "Inciter les utilisateurs à découvrir vos produits ou services"
+        },
+        "brand_coverage_awareness": {
+            "title": "Couverture et notoriété de la marque",
+            "description": "Toucher une audience élargie et renforcer la notoriété de votre marque"
+        },
+        "promote_app": {
+            "title": "Promotion d'une application",
+            "description": "Générer plus d'installations, d'engagement et de préinscriptions pour votre application"
+        },
+        "promotions_visits": {
+            "title": "Promotions et visites en magasin",
+            "description": "Attirer des visiteurs dans votre établissement (y compris un restaurant ou une concession automobile)"
+        },
+        "without_goal": {
+            "title": "Créer une campagne sans objectif spécifique",
+            "description": "Choisir directement un type de campagne sans passer par les recommandations basées sur vos objectifs"
+        }
+    },
+    "buttons": {
+        "create_campaign": "Créer campagne",
+        "reactive_campaign": "Réactiver la campagne brouillon",
+        "cancel": "Annuler",
+        "more_details": "Plus de détails"
     },
     "settings": {
         "appearance": "Apparence"
@@ -61,7 +109,9 @@
                 "title": "Performances publicitaires",
                 "clicks": "Clics",
                 "cond_camps": "Camp. menées",
+                "cond_camps_full": "Campagnes menées",
                 "average_costs": "Coûts moy.",
+                "average_costs_full": "Coûts moyens",
                 "expenses": "Dépenses",
                 "pay": "Solde"
             },
@@ -72,21 +122,28 @@
                 "recharge_account": "Recharger compte"
             },
             "billing": {
-                "title": "Facturation"
+                "title": "Facturation",
+                "description": "Derniers versements effectués"
             }, 
             "search_keywords": {
                 "title": "Mots clés de recherche"
             },
             "networks": {
                 "title": "Reseaux"
+            },
+            "draft": {
+                "title": "Brouillons",
+                "description": "Continuez à créer vos campagnes"
             }
         },
         "file_manager": {
+            "title": "Gestionnaire de fichiers",
             "add_file": "Ajouter fichier",
             "storage": "Stockage",
             "files_detected": "fichiers détectés",
             "contacts_detected": "contacts détectés",
-            "files": "fichiers"
+            "files": "fichiers",
+            "only_needed_files": "Téléversez uniquement les fichiers nécessaires à vos campagnes !"
         }
     }
 }

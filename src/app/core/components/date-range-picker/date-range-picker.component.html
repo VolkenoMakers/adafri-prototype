@@ -1,14 +1,15 @@
 <div class="input-container d-flex">
     <input type="text"
-  ngxDaterangepickerMd
-  [(ngModel)]="selected"
-  [showCustomRangeLabel]="true"
-  [alwaysShowCalendars]="true"
-  [ranges]="ranges"
-  [linkedCalendars]="true"
-  [isInvalidDate] = "isInvalidDate"
-  [showClearButton]="true"/>
-
+      ngxDaterangepickerMd
+      [(ngModel)]="selected"
+      [showCustomRangeLabel]="true"
+      [alwaysShowCalendars]="true"
+      [ranges]="ranges"
+      [autoApply]="true"
+      [linkedCalendars]="true"
+      [isInvalidDate] = "isInvalidDate"
+      [showClearButton]="true"
+    />
     <div class="icon">
         <span class="material-symbols-outlined">arrow_drop_down</span>
     </div>

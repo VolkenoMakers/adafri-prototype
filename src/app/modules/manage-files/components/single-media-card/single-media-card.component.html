@@ -1,0 +1,24 @@
+<div class="file-single">
+    <img src="assets/images/test.png" alt="adafri">
+    <div class="container toolbar py-2">
+        <div class="d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined">image</span>
+            <span class=" mx-2 text-lowercase">image2.png</span>
+        </div>
+        <div class="menu">
+            <button [matMenuTriggerFor]="menu">
+                <span class="material-symbols-outlined">more_vert</span>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>preview</mat-icon>
+                    <span>Apercu</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>delete</mat-icon>
+                    <span>Supprimer</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
