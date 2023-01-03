@@ -27,6 +27,11 @@ const routes: Routes = [
         path: 'files',
         loadChildren: () => import('./modules/manage-files/manage-files.module').then(m => m.ManageFilesModule)
       }
+      ,
+      {
+        path: 'transactions',
+        loadChildren: () => import('./modules/manage-transactions/manage-transactions.module').then(m => m.ManageTransactionsModule)
+      }
     ],
   },
   { 
@@ -59,7 +64,7 @@ const routes: Routes = [
         component: RegisterPageComponent
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

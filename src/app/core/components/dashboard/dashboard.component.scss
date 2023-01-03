@@ -185,6 +185,13 @@ mat-card-title{
       }
     }
   }
+  
+  .active-icon {
+    display: none;
+    background-color: var( --adf-green-800);
+    width: 10px;
+    height: 10px;
+  }
 }
 .dark-mode {
   :host {

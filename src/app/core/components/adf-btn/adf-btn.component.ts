@@ -14,6 +14,7 @@ export class AdfBtnComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    
   }
 }

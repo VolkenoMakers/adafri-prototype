@@ -151,6 +151,9 @@
                 }
             }
             mat-card {
+                p {
+                    color: var(--adf-white) !important;
+                }
                 background-color: var(--adf-black-600);
                 color: var(--adf-white);
                 mat-card-content {
@@ -158,6 +161,14 @@
                         color: var(--adf-white);
                     }
                 }
+                .object-card:hover,
+                .object-card.selected-objectif{
+                    background-color: var(--adf-gray-800) !important;
+                }
+            }
+            .name-input {
+                border: 1.5px solid var(--adf-white) !important;
+                color: var(--adf-white) !important;
             }
         }
     }

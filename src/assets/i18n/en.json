@@ -64,6 +64,10 @@
         "appearance": "Appearence"
     },
     "tooltips": {
+        "costs": "Costs",
+        "online": "Online",
+        "offline": "Offline",
+        "completed": "Completed",
         "full_screen": "Full screen",
         "search": "Search",
         "dark_mode": "Dark mode",
@@ -98,7 +102,9 @@
             "transactions": "Transactions",
             "campaigns": "Campaigns",
             "settings": "Settings",
-            "files": "File manager"
+            "files": "File manager",
+            "others_products":  "Others products",
+            "survey_ussd": "Survey by USSD"
         },
         "dashboard": {
             "date": {
@@ -134,6 +140,9 @@
             "draft": {
                 "title": "Drafts",
                 "description": "Continue to create your campaigns"
+            },
+            "summary": {
+                "title": "Summary of campaigns"
             }
         },
         "file_manager": {

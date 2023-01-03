@@ -64,6 +64,10 @@
         "appearance": "Apparence"
     },
     "tooltips": {
+        "costs": "Coûts",
+        "online": "En ligne",
+        "offline": "Hors ligne",
+        "completed": "Terminée",
         "full_screen": "Plein écran",
         "search": "Rechercher",
         "dark_mode": "Mode sombre",
@@ -98,7 +102,9 @@
             "transactions": "Transactions",
             "campaigns": "Campagnes",
             "settings": "Paramètres",
-            "files": "Gest. de fichiers"
+            "files": "Gest. de fichiers",
+            "others_products":  "Autres produits",
+            "survey_ussd": "Sondage par USSD"
         },
         "dashboard": {
             "date": {
@@ -134,6 +140,9 @@
             "draft": {
                 "title": "Brouillons",
                 "description": "Continuez à créer vos campagnes"
+            },
+            "summary": {
+                "title": "Récapitulatif des campagnes"
             }
         },
         "file_manager": {

@@ -4,8 +4,8 @@ import { ManageFilesRoutingModule } from './manage-files-routing.module';
 import { DisplayAssetsComponent } from './components/display-assets/display-assets.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { SingleMediaCardComponent } from './components/single-media-card/single-media-card.component';
-import { CreateGroupContactsComponent } from '../../create-group-contacts/create-group-contacts.component';
-import { CreateSingleContactComponent } from '../../create-single-contact/create-single-contact.component';
+import { CreateGroupContactsComponent } from './components/create-group-contacts/create-group-contacts.component';
+import { CreateSingleContactComponent } from './components/create-single-contact/create-single-contact.component';
 
 
 @NgModule({

@@ -13,7 +13,6 @@ import { AdfBtnComponent } from './components/adf-btn/adf-btn.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { RouterModule } from '@angular/router';
-import { TransactionsComponent } from './components/transactions/transactions.component';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
@@ -30,6 +29,7 @@ import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
@@ -40,7 +40,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NoInternetComponent,
     MainNavbarComponent,
     AdfBtnComponent,
-    TransactionsComponent,
     LoadingPageComponent,
     SearchDialog,
   ],
@@ -48,6 +47,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CommonModule,
     HttpClientModule,
     MatProgressBarModule,
+    MatExpansionModule,
     MatDialogModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
@@ -70,6 +70,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ThemesService
   ],
   exports: [
+    MatExpansionModule,
     MatPaginatorModule,
     MatCheckboxModule,
     MatTableModule,
@@ -80,7 +81,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NoInternetComponent,
     LoadingPageComponent,
     HttpClientModule,
-    TransactionsComponent,
     TranslateModule,
     FormsModule,
     MatButtonModule,

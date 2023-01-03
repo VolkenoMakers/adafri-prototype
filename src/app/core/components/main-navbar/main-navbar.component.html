@@ -1,6 +1,6 @@
 <mat-toolbar class="px-lg-3">
     <div class="position-relative d-flex justify-content-between align-items-center w-100">
-        <div>
+        <div routerLink="/overview" style="cursor: pointer;">
             <img src="assets/images/logo-blue.png" *ngIf="!isDarkMode" alt="adafri" width="90">
             <img src="assets/images/logo-white.png" *ngIf="isDarkMode" alt="adafri" width="90">
         </div>
@@ -27,10 +27,10 @@
                             <span>Thème clair</span>
                             <img src="assets/images/light_thumbnail.png" alt="adafri">
                         </div>
-                        <!-- <div class="auto-btn px-2 py-2 d-flex align-items-center justify-content-between" [ngClass]="{'active-theme': activeTheme === 'auto-mode'}">
+                        <div class="auto-btn px-2 py-2 d-flex align-items-center justify-content-between" [ngClass]="{'active-theme': activeTheme === 'auto-mode'}" (click)="setTheme('auto-mode')">
                             <span>Automatique</span>
                             <img src="assets/images/device_default_thumbnail.png" alt="adafri">
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </mat-menu>

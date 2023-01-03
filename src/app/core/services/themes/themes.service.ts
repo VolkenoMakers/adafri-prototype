@@ -28,4 +28,11 @@ export class ThemesService {
     if(localStorage.getItem(this.adafriThemeKey)) theme = localStorage.getItem(this.adafriThemeKey)
     return theme;
   }
+
+  autoMode(){
+    // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //   this.setTheme('dark-mode')
+    // }
+    // alert("Coming soon...")
+  }
 }

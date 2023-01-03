@@ -234,13 +234,13 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <mat-grid-tile [colspan]="8" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
               <div class="d-flex align-items-center">
-                <span class="material-symbols-outlined">query_stats</span>
-                <span class="mx-2">{{ 'navigation.dashboard.search_keywords.title' | translate }}</span>
+                <span class="material-symbols-outlined">summarize</span>
+                <span class="mx-2">{{ 'navigation.dashboard.summary.title' | translate }}</span>
               </div>
               <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
@@ -252,12 +252,177 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content dash-md">
-            <img src="assets/images/empty.svg" alt="adafri">
-            <p>{{ 'campaign.no_data' | translate }}</p>
+            <div class="d-none">
+              <img src="assets/images/empty.svg" alt="adafri">
+              <p>{{ 'campaign.no_data' | translate }}</p>
+            </div>
+            <div class="w-100 text-start">
+              <mat-accordion>
+                <mat-expansion-panel class="p-2">
+                  <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <!-- <span class="mx-2" matTooltip="{{'tooltips.online'|translate}}"
+                        style="background-color: var(--adf-green-800);
+                        width: 15px;height: 15px;border-radius: 50%;"></span> -->
+                        <!-- <span class="mx-2" matTooltip="{{'tooltips.offline'|translate}}"
+                        style="background-color: var(--adf-red-800);
+                        width: 15px;height: 15px;border-radius: 50%;"></span> -->
+                        <span class="mx-2 material-symbols-outlined" matTooltip="{{'tooltips.completed'|translate}}"
+                        style="color: var(--adf-blue-500);"
+                        >update</span>
+                      </div>
+                      <div class="mx-2 text-nowrap">
+                        <h4 class="m-0 p-0 fw-bold"
+                        matTooltip="TOUBA CA KANAM OK-5949889272"
+                        >TOUBA CA KANAM OK-5949889272</h4>
+                        <span class="m-0 p-0" 
+                        style="color:var(--adf-gray-600);margin-top: -50px;"
+                        matTooltip="Display">
+                          Display</span>
+                      </div>
+                    </div>
+                  </mat-panel-title>
+                  <mat-panel-description class=" w-50">
+                    <div class="row text-center w-100">
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'navigation.dashboard.ads_performance.clicks' | translate }}
+                          </span><br>
+                          <span style="color: black;">4919</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'tooltips.costs' | translate }}
+                          </span><br>
+                          <span style="color: black;">$121.03</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">Impressions</span><br>
+                          <span style="color: black;">450841</span>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-panel-description>
+                  </mat-expansion-panel-header>
+                    <div class="expension-container bg-warning">
+                      <p>Ceci est le contenu</p>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="p-2">
+                  <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <span class="mx-2" matTooltip="{{'tooltips.online'|translate}}"
+                        style="background-color: var(--adf-green-800);
+                        width: 15px;height: 15px;border-radius: 50%;"></span>
+                      </div>
+                      <div class="mx-2 text-nowrap">
+                        <h4 class="m-0 p-0 fw-bold"
+                        matTooltip="TOUBA CA KANAM OK-5949889272"
+                        >TOUBA CA KANAM OK-5949889272</h4>
+                        <span class="m-0 p-0" 
+                        style="color:var(--adf-gray-600);margin-top: -50px;"
+                        matTooltip="Display">
+                          Display</span>
+                      </div>
+                    </div>
+                  </mat-panel-title>
+                  <mat-panel-description class=" w-50">
+                    <div class="row text-center w-100">
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'navigation.dashboard.ads_performance.clicks' | translate }}
+                          </span><br>
+                          <span style="color: black;">4919</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'tooltips.costs' | translate }}
+                          </span><br>
+                          <span style="color: black;">$121.03</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">Impressions</span><br>
+                          <span style="color: black;">450841</span>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-panel-description>
+                  </mat-expansion-panel-header>
+                    <div class="expension-container bg-warning">
+                      <p>Ceci est le contenu</p>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="p-2">
+                  <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <span class="mx-2" matTooltip="{{'tooltips.offline'|translate}}"
+                        style="background-color: var(--adf-red-800);
+                        width: 15px;height: 15px;border-radius: 50%;"></span>
+                      </div>
+                      <div class="mx-2 text-nowrap">
+                        <h4 class="m-0 p-0 fw-bold"
+                        matTooltip="TOUBA CA KANAM OK-5949889272"
+                        >TOUBA CA KANAM OK-5949889272</h4>
+                        <span class="m-0 p-0" 
+                        style="color:var(--adf-gray-600);margin-top: -50px;"
+                        matTooltip="Display">
+                          Display</span>
+                      </div>
+                    </div>
+                  </mat-panel-title>
+                  <mat-panel-description class=" w-50">
+                    <div class="row text-center w-100">
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'navigation.dashboard.ads_performance.clicks' | translate }}
+                          </span><br>
+                          <span style="color: black;">4919</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">
+                            {{ 'tooltips.costs' | translate }}
+                          </span><br>
+                          <span style="color: black;">$121.03</span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="h-100">
+                          <span class="fw-bold">Impressions</span><br>
+                          <span style="color: black;">450841</span>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-panel-description>
+                  </mat-expansion-panel-header>
+                    <div class="expension-container bg-warning">
+                      <p>Ceci est le contenu</p>
+                    </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <!-- <mat-grid-tile [colspan]="4" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
@@ -412,7 +577,7 @@
             </div>
           </mat-card-content>
         </mat-card>
-      </mat-grid-tile>
+      </mat-grid-tile> -->
     </div>
   </mat-grid-list>
 </div>

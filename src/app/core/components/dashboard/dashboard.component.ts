@@ -37,6 +37,7 @@ export class DashboardComponent implements AfterViewInit {
     },
   };
 
+  public panelOpenState:boolean = true;
   constructor() { }
 
   ngAfterViewInit(): void { 

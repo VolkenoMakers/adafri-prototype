@@ -1,4 +1,4 @@
-<!-- <app-loading-page *ngIf="isLoading"></app-loading-page>  -->
+<app-loading-page *ngIf="isLoading"></app-loading-page> 
 <app-main-navbar></app-main-navbar>
 <div class="toggle-btn" (click)="toggleSidebar(); drawer.toggle()">
   <span class="material-symbols-outlined" *ngIf="!isToggled">chevron_left</span>
@@ -13,7 +13,7 @@
         <a mat-list-item routerLinkActive="active" routerLink="/overview">
           {{ 'navigation.aside.overview' | translate }}
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/transactions">
+        <a mat-list-item routerLinkActive="active" routerLink="/transactions/list">
           {{ 'navigation.aside.transactions' | translate }}
         </a>
         <a mat-list-item routerLinkActive="active" routerLink="/campaign/list">
@@ -25,6 +25,11 @@
         <a mat-list-item routerLinkActive="active" routerLink="/files/display" 
         matTooltip="{{ 'navigation.file_manager.title' | translate }}">
           {{ 'navigation.aside.files' | translate }}
+        </a><br><br>
+        <span class="separator-span">{{ 'navigation.aside.others_products' | translate }}</span>
+        <mat-divider></mat-divider>
+        <a class="mt-2" mat-list-item routerLinkActive="active" routerLink="/campaign/ussd">
+          {{ 'navigation.aside.survey_ussd' | translate }}
         </a>
       </mat-nav-list>
     </mat-sidenav>

@@ -23,8 +23,7 @@ export class MainNavbarComponent implements OnInit {
     public router: Router,
     public themeService: ThemesService,
     public languageService: LanguageService
-    ) 
-    { 
+    ){ 
      if (this.themeService.getTheme() === 'dark-mode') {
       this.activeTheme = 'dark-mode'
       this.isDarkMode = true
@@ -45,10 +44,14 @@ export class MainNavbarComponent implements OnInit {
   }
 
   setTheme(mode:string){
+    if (mode === 'auto-mode') return alert('soon')
     if(this.themeService.getTheme() !== mode) {
       this.themeService.setTheme(mode)
       this.activeTheme = mode
       this.isDarkMode = !this.isDarkMode
+    }
+    if(mode === 'auto-mode'){
+      this.themeService.autoMode()
     }
   }
 

@@ -4,8 +4,8 @@ import { MatTableDataSource } from "@angular/material/table";
 import { SelectionModel } from "@angular/cdk/collections";
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateSingleContactComponent } from '../../../../create-single-contact/create-single-contact.component';
-import { CreateGroupContactsComponent } from '../../../../create-group-contacts/create-group-contacts.component';
+import { CreateSingleContactComponent } from '../create-single-contact/create-single-contact.component';
+import { CreateGroupContactsComponent } from '../create-group-contacts/create-group-contacts.component';
 
 @Component({
   selector: 'app-display-assets',
