@@ -1,0 +1,12 @@
+<div class="container">
+    <h4>Montant en dollars US</h4>
+    <p>
+        Saisissez le montant a recharger en $
+    </p>
+    <app-adf-input (newItemEvent)="getValue($event)"
+    placeholder="1000$"></app-adf-input>
+    <div class="mt-4">
+        <app-adf-btn icon="close" text="{{'buttons.proceed_payement'|translate}}" *ngIf="!isNumberValid" [isDisabled]="true" [isFull]="true"></app-adf-btn>
+        <app-adf-btn icon="done" text="{{'buttons.proceed_payement'|translate}}" *ngIf="isNumberValid" (click)="makeRecharge()" [isFull]="true"></app-adf-btn>
+    </div>
+</div>

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UssdComponent } from './ussd.component';
+import { CreateUssdComponent } from './components/create-ussd/create-ussd.component';
 
-const routes: Routes = [{ path: '', component: UssdComponent }];
+const routes: Routes = [
+  { path: 'create',component: CreateUssdComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

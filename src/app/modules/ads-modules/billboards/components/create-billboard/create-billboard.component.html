@@ -1,0 +1,87 @@
+<main class="pt-5">
+    <div class="container h-100">
+        <h2 class="my-3 d-flex align-items-center">
+            <span class="material-symbols-outlined">edit_square</span>
+            <span class="mx-2">{{'campaign.billboards.title'|translate}}</span>
+        </h2>
+        <mat-card *ngIf="step === 2">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col">
+                    <mat-label class="label mx-2">{{ 'campaign.billboards.screen_type' | translate }}</mat-label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'campaign.billboards.choose_screen_type' | translate }}</mat-label>
+                        <mat-select [formControl]="typeControl" (selectionChange)="screenTypeChange()">
+                            <mat-option selected value="atlantis">{{ 'campaign.billboards.dooh_title' | translate }}</mat-option>
+                            <mat-option value="auchan">{{ 'campaign.billboards.led_screen_title' | translate }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col" *ngIf="typeControl.value === 'atlantis'">
+                    <div class="text-center">
+                        <mat-label class="label">{{ 'campaign.billboards.choose_countries' | translate }}</mat-label>
+                    </div>
+                    <div class="d-flex justify-content-center my-2">
+                        <div class="d-flex single-country app-bg-secondary mx-2 flex-column position-relative align-items-center" *ngFor='let country of countries' (click)="selectCountry(country)">
+                            <span class="check-icon material-symbols-outlined position-absolute" *ngIf="selected_countries.includes(country)">check_box</span>
+                            <img src="{{image_country_source + country.image}}" width="70" alt="{{country.name}}">
+                            <span>{{ country.name }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col my-2 my-md-0">
+                    <mat-label class="label">{{ 'campaign.billboards.broadcast_period' | translate }}</mat-label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'campaign.billboards.choose_broadcast_period' | translate }}</mat-label>
+                        <mat-date-range-input [dateFilter]="unavailableDays" [formGroup]="range" [rangePicker]="picker">
+                            <input matStartDate placeholder="{{'campaign.billboards.start_date'|translate}}" formControlName="start">
+                            <input matEndDate placeholder="{{'campaign.billboards.end_date'|translate}}" formControlName="end" (dateChange)="getDays()">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+                <div class="col" *ngIf="(selected_countries.length>0) && typeControl.value === 'atlantis'">
+                    <mat-label class="label"> {{ 'campaign.billboards.broadcast_locations' | translate }} </mat-label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label> {{ 'campaign.billboards.locations' | translate }} </mat-label>
+                        <mat-select [formControl]="locationsToDiffuseControl" multiple [(value)]="selected_locations_to_diffuse">
+                            <mat-option *ngFor="let broadcastLocation of broadcast_locations_to_display" [value]="broadcastLocation">
+                                {{broadcastLocation.country?.name}} - {{broadcastLocation.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>
+                            <span class="font-weight-bold">{{locationsToDiffuseControl.value.length}}</span> {{ 'campaign.billboards.choosed_locations' | translate }}
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col" *ngIf="typeControl.value === 'auchan'">
+                    <mat-label class="label"> {{ 'campaign.billboards.broadcast_locations' | translate }}</mat-label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'campaign.billboards.locations' | translate }}</mat-label>
+                        <mat-select [formControl]="locationsToDiffuseAuchanControl" multiple [(value)]="selected_locations_to_diffuse">
+                            <mat-option *ngFor="let broadcastLocation of broadcastLocationsAuchan" [value]="broadcastLocation">
+                                {{broadcastLocation.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>
+                            <span class="font-weight-bold">{{locationsToDiffuseAuchanControl.value.length}}</span> {{ 'campaign.billboards.choosed_locations' | translate  }}
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col" *ngIf="typeControl.value === 'atlantis'">
+                    <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                        <button mat-stroked-button color="primary" class="m-2" (click)="openPreviewDialog()">
+                            {{ 'campaign.billboards.preview_pannels' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="my-2 file-upload-card" *ngIf="step === 2">
+            <mat-card-header *ngIf="!videoUrl && !imageUrl">
+                <h4 class="fw-bold">{{ 'campaign.billboards.upload_title' | translate }}</h4>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</main>

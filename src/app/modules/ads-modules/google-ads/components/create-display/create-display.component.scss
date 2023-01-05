@@ -1,0 +1,41 @@
+:host {
+    main {
+        min-height: calc(100vh - 64px);
+        display: flex;
+        justify-content: center;
+        .container{
+            margin: 0 auto;
+            max-width: 1088px;
+            margin: 0 auto;
+            mat-card {
+                .divider{
+                    height: 1px;
+                    width: 100%;
+                    background-color: var(--adf-gray-600);
+                }
+                .website-viewer {
+                    height: 350px;
+                    width: 100%;
+                    
+                }
+            }
+        }
+    }
+}
+
+// ONLY COLORS 
+.white-mode {
+    :host{
+        main {
+            background-color: var(--adf-gray-400);
+        }
+    }
+}
+//ONLY COLORS
+.dark-mode {
+    :host {
+        main {
+            background-color: var(--adf-black-800);
+        }
+    }
+}

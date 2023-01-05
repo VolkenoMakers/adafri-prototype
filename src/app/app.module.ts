@@ -9,10 +9,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function createTranslateLoader(httpClient:HttpClient){
     return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json')
- }
+}
  
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ export function createTranslateLoader(httpClient:HttpClient){
         AppRoutingModule,
         BrowserAnimationsModule,
         LayoutModule,
+        NgbModule,
     ]
 })
 export class AppModule { }

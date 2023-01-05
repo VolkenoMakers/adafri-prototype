@@ -1,157 +1,202 @@
-.grid-container {
-  margin: 20px;
-  background-position: center;
-  background-size: contain;
-  background-attachment: fixed;
-  .dash-md {
+:host {
+  .action-btn {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    img {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      width: 50%;
+    background: transparent;
+    border: 1.5px solid black;
+    border-radius: 4px;
+    padding: 1px 2px;
+    .icon {
+      font-size: 15px;
     }
-    p {
-      margin-top: 30px;
+
+    .icon-green {
+      color: var(--adf-green-800);
     }
   }
-}
-.title{
-  font-size: 22px;
-  font-weight: 400;
-}
-.days-title{
-  margin-top: 3px;
-}
-.days-title, .date-range{
-  font-size: 14px;
-  font-weight: 400;
-}
-.date-range{
-  border-radius: 2px;
-  padding: 2px 5px;
-  cursor: pointer;
-}
-mat-toolbar {
-  button{
-    color: var(--adf-blue-700) !important;
+  .carousel-container {
+    background-color: var(--adf-gray-400);
   }
-}
-.dashboard-card {
-  position: absolute;
-  box-shadow: rgba(0, 119, 182, 0.2) 0px 8px 24px;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
-  .description {
-    font-size: 14px;
+  .grid-container {
+    margin: 20px;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    .dash-md {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 50%;
+      }
+      p {
+        margin-top: 30px;
+      }
+    }
   }
-  .price {
+  .title{
     font-size: 22px;
-    right: 10px;
+    font-weight: 400;
+  }
+  .days-title{
+    margin-top: 3px;
+  }
+  .days-title, .date-range{
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .date-range{
+    border-radius: 2px;
+    padding: 2px 5px;
+    cursor: pointer;
+  }
+  mat-toolbar {
+    button{
+      color: var(--adf-blue-700) !important;
+    }
+  }
+  .dashboard-card {
+    position: absolute;
+    box-shadow: rgba(0, 119, 182, 0.2) 0px 8px 24px;
     top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
   }
-  .tiles{
-    max-height: 280px;
-    overflow-y: scroll;
-    .single-tile {
-      border-bottom: 1px solid var(--adf-gray-400);
-      border-radius: 3px;
-      margin-bottom: 10px;
-      padding: 5px;
-      min-height: 54px;
-      a {
-        text-decoration: none;
-      }
-      .icon {
-        width: 30px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
   }
-}
-
-.mat-card-header{
-  border-bottom: 0.3px #d9d9d9 solid;
-  margin-bottom: 10px;
-}
-
-mat-card-title{
-  span{
-    font-size: 15px;
-  }
-}
-
-.info-cards{
-  width: fit-content;
-  border-radius: 7px;
-  overflow: hidden;
-  .info-card{
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: calc(100% / 5);
-    height: 116px;
-    color: white;
-    position: relative;
-    h5 {
-      font-size: 20px;
-      font-weight: 300;
+  
+  .dashboard-card-content {
+    text-align: center;
+    .description {
+      font-size: 14px;
     }
-    .value{
-      margin-top: 10px;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    .material-symbols-outlined {
-      font-size: 50px;
-      opacity: .4;
+    .price {
+      font-size: 22px;
       right: 10px;
-      bottom: 50%;
-      position: absolute;
-      transform: translateY(50%);
+      top: 15px;
+    }
+    .tiles {
+      max-height: 280px;
+      overflow-y: scroll;
+      .single-tile {
+        border-bottom: 1px solid var(--adf-gray-400);
+        border-radius: 3px;
+        margin-bottom: 10px;
+        padding: 5px;
+        min-height: 54px;
+        a {
+          text-decoration: none;
+        }
+        .icon {
+          width: 30px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
-  .clicks{
-    background-color: var(--adf-blue-800);
+  
+  .mat-card-header{
+    border-bottom: 0.3px #d9d9d9 solid;
+    margin-bottom: 10px;
   }
-  .nb-camp{
-    background-color: var(--adf-blue-700);
+  .recap-accordion {
+    max-height: 320px;
+    overflow-y: scroll;
   }
-  .cpc-moy{
-    background-color: var(--adf-blue-600);
+  mat-card-title{
+    span{
+      font-size: 15px;
+    }
   }
-  .expenses{
-    background-color: var(--adf-blue-500);
+  
+  .info-cards{
+    width: fit-content;
+    border-radius: 7px;
+    overflow: hidden;
+    .info-card{
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: calc(100% / 5);
+      height: 116px;
+      color: white;
+      position: relative;
+      h5 {
+        font-size: 20px;
+        font-weight: 300;
+      }
+      .value{
+        margin-top: 10px;
+        font-size: 40px;
+        font-weight: bold;
+      }
+      .material-symbols-outlined {
+        font-size: 50px;
+        opacity: .4;
+        right: 10px;
+        bottom: 50%;
+        position: absolute;
+        transform: translateY(50%);
+      }
+    }
+    .clicks{
+      background-color: var(--adf-blue-800);
+    }
+    .nb-camp{
+      background-color: var(--adf-blue-700);
+    }
+    .cpc-moy{
+      background-color: var(--adf-blue-600);
+    }
+    .expenses{
+      background-color: var(--adf-blue-500);
+    }
+    .solde{
+      background-color: var(--adf-blue-400);
+    }
   }
-  .solde{
-    background-color: var(--adf-blue-400);
+  .funds-btn{
+    position: absolute;
+    bottom: 80px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .recap-accordion{
+    .status-green {
+      background-color: var(--adf-green-800);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    .status-red {
+      color:var(--adf-gray-600);
+      margin-top: -50px;
+    }
+    .black {
+      color: black;
+    }
+  }
+  
+  .desc-status {
+    font-weight: 500;
+    text-align: center;
+    background-color: var(--adf-gray-400);
+    border-radius: 50px;
+    padding: 10px;
   }
 }
-.funds-btn{
-  position: absolute;
-  bottom: 80px;
-  right: 50%;
-  transform: translateX(50%);
-}
-
 
 // ONLY COLORS
 .white-mode {

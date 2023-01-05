@@ -5,6 +5,7 @@ import { RegisterPageComponent } from './modules/security/components/register-pa
 import { FullComponent } from './layouts/full/full.component';
 import { NavigationComponent } from './layouts/navigation/navigation.component';
 import { NewCampaignComponent } from './modules/manage-campaign/components/new-campaign/new-campaign.component';
+import { ListCampaignsComponent } from './modules/manage-campaign/components/list-campaigns/list-campaigns.component';
 
 const routes: Routes = [
   { 
@@ -16,8 +17,9 @@ const routes: Routes = [
         loadChildren: () => import('./layouts/navigation/navigation.module').then(m => m.NavigationModule)  
       },
       {
-        path: 'campaign',
-        loadChildren: () => import('./modules/manage-campaign/manage-campaign.module').then(m => m.ManageCampaignModule),
+        path: 'campaign/list',
+        // loadChildren: () => import('./modules/manage-campaign/manage-campaign.module').then(m => m.ManageCampaignModule),
+        component: ListCampaignsComponent,
       },
       {
         path: 'setting',
@@ -41,6 +43,10 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./layouts/full/full.module').then(m => m.FullModule),
+      },
+      {
+        path: 'campaign',
+        loadChildren: () => import('./modules/manage-campaign/manage-campaign.module').then(m => m.ManageCampaignModule),
       },
       {
         path: 'campaign/new',

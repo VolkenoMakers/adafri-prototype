@@ -2,7 +2,7 @@
   button{
     cursor: pointer;
   }
-  .adf-btn{
+  .adf-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,5 +43,8 @@
   }
   .adf-btn-icon{
       padding-right: 30px;
+  }
+  .full {
+    width: 100% !important;
   }
 }

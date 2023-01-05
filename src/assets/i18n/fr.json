@@ -1,6 +1,8 @@
 {
     "no_internet": "Pas de connexion internet",
     "campaign": {
+        "pause": "Mettre en pause",
+        "activated": "Activée",
         "basic_setup": "Configuration de base",
         "choose_goal": {
             "title": "Choisissez votre objectif",
@@ -19,6 +21,7 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         },
         "new": "Nouvelle campagne",
+        "resume_draft": "Reprendre une campagne brouillon",
         "no_data": "Pas de données",
         "logout": "Se déconnecter",
         "sales": {
@@ -52,18 +55,42 @@
         "without_goal": {
             "title": "Créer une campagne sans objectif spécifique",
             "description": "Choisir directement un type de campagne sans passer par les recommandations basées sur vos objectifs"
+        },
+        "billboards": {
+            "title": "Campagnes panneaux publicitaires",
+            "screen_type": "Type d'écran",
+            "choose_screen_type": "Choisissez un type d'écran",
+            "dooh_title": "Publicité Extérieure Numérique",
+            "led_screen_title": "Ecran LED (AUCHAN)",
+            "choose_countries": "Selectionnez un ou plusieurs pays",
+            "broadcast_period": "Période de diffusion",
+            "choose_broadcast_period": "Saisissez une plage de date",
+            "start_date": "Date Début",
+            "end_date": "Date Fin",
+            "broadcast_locations": "Emplacements de diffusion",
+            "locations": "Emplacements",
+            "choosed_locations": "emplacement(s) sélectionné(s)",
+            "preview_pannels": "Aperçu des panneaux",
+            "senegal_screens": "Nos écrans au Sénégal",
+            "mali_screens": "Nos écrans au Mali",
+            "preview_description": "Nous vous apportons une visibilité avec nos écrans led au Sénégal et au Mali.",
+            "cars_per_days": "véhicules par jour",
+            "upload_title": "Téléverser une photo ou video"
         }
     },
     "buttons": {
         "create_campaign": "Créer campagne",
         "reactive_campaign": "Réactiver la campagne brouillon",
         "cancel": "Annuler",
-        "more_details": "Plus de détails"
+        "more_details": "Plus de détails",
+        "i_valid": "Je valide",
+        "proceed_payement": "Procéder au paiement"
     },
     "settings": {
         "appearance": "Apparence"
     },
     "tooltips": {
+        "announcement": "Annonce",
         "costs": "Coûts",
         "online": "En ligne",
         "offline": "Hors ligne",

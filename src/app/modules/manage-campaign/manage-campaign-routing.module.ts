@@ -4,7 +4,7 @@ import { ListCampaignsComponent } from './components/list-campaigns/list-campaig
 
 
 const routes: Routes = [
-  { path: 'list', component: ListCampaignsComponent },
+  // { path: 'list', component: ListCampaignsComponent },
   { path: 'google-ads', loadChildren: () => import('./../ads-modules/google-ads/google-ads.module').then(m => m.GoogleAdsModule) },
   { path: 'facebook-ads', loadChildren: () => import('./../ads-modules/facebook-ads/facebook-ads.module').then(m => m.FacebookAdsModule) },
   { path: 'sms', loadChildren: () => import('./../ads-modules/sms/sms.module').then(m => m.SmsModule) },

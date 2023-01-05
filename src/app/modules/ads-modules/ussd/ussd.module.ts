@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UssdRoutingModule } from './ussd-routing.module';
-import { UssdComponent } from './ussd.component';
+import { CreateUssdComponent } from './components/create-ussd/create-ussd.component';
 
 
 @NgModule({
   declarations: [
-    UssdComponent
+    CreateUssdComponent
   ],
   imports: [
     CommonModule,

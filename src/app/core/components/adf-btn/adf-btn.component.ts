@@ -11,6 +11,7 @@ export class AdfBtnComponent implements OnInit {
   @Input() icon? :string ;
   @Input() isOutlined: boolean = false;
   @Input() isDisabled: boolean = false;
+  @Input() isFull: boolean = false
   
   constructor() { }
 

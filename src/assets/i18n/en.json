@@ -1,6 +1,8 @@
 {
     "no_internet": "No internet connection",
     "campaign": {
+        "pause": "Pause",
+        "activated": "Activated",
         "basic_setup": "Basic Setup",
         "choose_goal": {
             "title": "Choose your goal",
@@ -19,6 +21,7 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         },
         "new": "New campaign",
+        "resume_draft": "Resume a draft campaign",
         "no_data": "No data",
         "logout": "Sign out",
         "sales": {
@@ -52,18 +55,42 @@
         "without_goal": {
             "title": "Create a campaign without a specific objective",
             "description": "Choose a type of campaign directly without going through the recommendations based on your objectives"
+        },
+        "billboards": {
+            "title": "Billboard campaigns",
+            "screen_type": "Screen type",
+            "choose_screen_type": "Choose a screen type",
+            "dooh_title": "Digital Out Of Home",
+            "led_screen_title": "LED Screen (AUCHAN)",
+            "choose_countries": "Select one or more countries",
+            "broadcast_period": "Broadcast period",
+            "choose_broadcast_period": "Enter a date range",
+            "start_date": "Start date",
+            "end_date": "End date",
+            "broadcast_locations": "Broadcast locations",
+            "locations": "Locations",
+            "choosed_locations": "location(s) selected",
+            "preview_pannels": "Overview of panels",
+            "senegal_screens": "Our screens in Senegal",
+            "mali_screens": "Our screens in Mali",
+            "preview_description": "We bring you visibility with our led screens in Senegal and Mali",
+            "cars_per_days": "cars per day",
+            "upload_title": "Upload a photo or video"
         }
     },
     "buttons": {
         "create_campaign": "Create campaign",
         "reactive_campaign": "Reactivate draft campaign",
         "cancel": "Cancel",
-        "more_details": "More details"
+        "more_details": "More details",
+        "i_valid": "I valid",
+        "proceed_payement": "Proceed to payment"
     },
     "settings": {
         "appearance": "Appearence"
     },
     "tooltips": {
+        "announcement": "Announcement",
         "costs": "Costs",
         "online": "Online",
         "offline": "Offline",

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { VoiceRoutingModule } from './voice-routing.module';
-import { VoiceComponent } from './voice.component';
+import { CreateVoiceComponent } from './components/create-voice/create-voice.component';
 
 
 @NgModule({
   declarations: [
-    VoiceComponent
+    CreateVoiceComponent,
   ],
   imports: [
     CommonModule,

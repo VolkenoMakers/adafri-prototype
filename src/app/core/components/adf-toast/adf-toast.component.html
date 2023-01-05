@@ -1,0 +1,13 @@
+<div class="position-fixed">
+    <ngb-toast *ngIf="true" [autohide]="false" (hidden)="false">
+        <ng-template ngbToastHeader>
+            <div class="me-auto">
+                <div class="d-flex align-items-center">
+                    <span class="material-symbols-outlined">{{icon}}</span>
+                    <strong class="mx-1">{{title}}</strong>
+                </div>
+            </div>
+        </ng-template>
+        {{message}}
+    </ngb-toast>
+</div>

@@ -1,3 +1,7 @@
+<app-adf-toast icon="notifications" 
+message="Lorem ipsum, dolor sit amet consectetur adipisicing elit." 
+title="Message d'alerte"></app-adf-toast>
+
 <mat-toolbar class="toolbar">
   <div class="container-fluid">
     <div class="w-100 d-flex align-items-center justify-content-between h-100">
@@ -27,7 +31,6 @@
     <app-adf-btn [matMenuTriggerFor]="menuNewCamp" 
       text="{{ 'campaign.new' | translate }}" 
       class="new-camp-btn" icon="add_notes">
-      
     </app-adf-btn>
   </div>
   <mat-menu #menuNewCamp="matMenu" class="mx-3 mt-2 px-0">
@@ -35,12 +38,12 @@
       <span>{{ 'campaign.new' | translate }}</span>
     </button>
     <button mat-menu-item class="d-flex align-items-center">
-      <span class="text-nowrap"> Reprendre une campagne brouillon</span>
+      <span class="text-nowrap"> {{'campaign.resume_draft' | translate}}</span>
     </button>
   </mat-menu>
-  <mat-grid-list cols="12" rowHeight="420px">
+  <mat-grid-list cols="12" rowHeight="420px" (window:resize)="onResize()">
     <div class="container">
-      <mat-grid-tile [colspan]="9" [rowspan]="1">
+      <mat-grid-tile [colspan]="breakpointPerformances" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
@@ -93,7 +96,7 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <mat-grid-tile [colspan]="breakpointAccount" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
@@ -114,13 +117,13 @@
               <p><span class="fw-bold">{{ 'navigation.dashboard.account.company' | translate }}:</span>  ADAFRI</p>
               <p><span class="fw-bold">{{ 'navigation.dashboard.account.title' | translate }}:</span>  Adafri-1664164715006</p>
               <p><span class="fw-bold">{{ 'navigation.dashboard.account.identifier' | translate }}:</span>  qhDOUs2GdDLe86VsklHq</p>
-              <app-adf-btn class="funds-btn text-nowrap" 
+              <app-adf-btn class="funds-btn text-nowrap" (click)="openRechargeDialog()"
                 text="{{ 'navigation.dashboard.account.recharge_account' | translate }}" icon="paid">
               </app-adf-btn>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <mat-grid-tile [colspan]="breakpointFacturation" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
@@ -234,7 +237,7 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="8" [rowspan]="1">
+      <mat-grid-tile [colspan]="breakpointRecap" [rowspan]="1">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
@@ -251,12 +254,12 @@
               </mat-menu>
             </mat-card-title>
           </mat-card-header>
-          <mat-card-content class="dashboard-card-content dash-md">
+          <mat-card-content class="dashboard-card-content dash-recap-card dash-md">
             <div class="d-none">
               <img src="assets/images/empty.svg" alt="adafri">
               <p>{{ 'campaign.no_data' | translate }}</p>
             </div>
-            <div class="w-100 text-start">
+            <div class="w-100 text-start recap-accordion">
               <mat-accordion>
                 <mat-expansion-panel class="p-2">
                   <mat-expansion-panel-header>
@@ -276,7 +279,9 @@
                       <div class="mx-2 text-nowrap">
                         <h4 class="m-0 p-0 fw-bold"
                         matTooltip="TOUBA CA KANAM OK-5949889272"
-                        >TOUBA CA KANAM OK-5949889272</h4>
+                        >
+                          <a routerLink="/campaign/list" class="text-decoration-none">TOUBA CA KANAM OK-5949889272</a>
+                        </h4>
                         <span class="m-0 p-0" 
                         style="color:var(--adf-gray-600);margin-top: -50px;"
                         matTooltip="Display">
@@ -311,8 +316,73 @@
                     </div>
                   </mat-panel-description>
                   </mat-expansion-panel-header>
-                    <div class="expension-container bg-warning">
-                      <p>Ceci est le contenu</p>
+                    <div class="expension-container pt-2">
+                      <div class="container" style="min-height: 200px;">
+                        <div class="row">
+                          <div class="col col-6">
+                            <div class="carousel-container">
+                              <ngb-carousel *ngIf="images">
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[0]" alt="Random first slide" />
+                                  </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[1]" alt="Random second slide" />
+                                  </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[2]" alt="Random third slide" />
+                                  </div>
+                                </ng-template>
+                              </ngb-carousel>
+                              <div class="row px-1 pb-2">
+                                <div class="col col-3">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'tooltips.announcement' | translate }}</h5>
+                                  <button class="action-btn" [matMenuTriggerFor]="actionsMenu">
+                                    <span class="material-symbols-outlined icon-green icon">play_circle</span>
+                                    <span class="mx-1">{{'campaign.activated'|translate}}</span>
+                                    <span class="material-symbols-outlined icon">arrow_drop_down</span>
+                                  </button>
+                                  <mat-menu #actionsMenu="matMenu">
+                                    <button mat-menu-item class="d-flex align-items-center">
+                                      <span class="material-symbols-outlined icon icon-green ">play_circle</span>
+                                      <span class="mx-2">{{'campaign.activated'|translate}}</span>
+                                    </button>
+                                    <button mat-menu-item class="d-flex align-items-center">
+                                      <span class="material-symbols-outlined icon icon-green ">pause_circle</span>
+                                      <span class="mx-2">{{'campaign.pause'|translate}}</span>
+                                    </button>
+                                  </mat-menu>
+                                </div>
+                                <div class="col col-3 text-center">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'navigation.dashboard.ads_performance.clicks' | translate }}</h5>
+                                  <span class="w-100 fw-bold text-center">4919</span>
+                                </div>
+                                <div class="col col-3 text-center">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'tooltips.costs' | translate }}</h5>
+                                  <span class="w-100 fw-bold">$121.03</span>
+                                </div>
+                                <div class="col col-3 text-end">
+                                  <h5 class="fw-bold m-0 p-0">Impressions</h5>
+                                  <span class="w-100 fw-bold">450851</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col col-6">
+                            <div class="d-flex justify-content-center">
+                              <img src="assets/images/winners.svg" style="margin-top:-10px;max-height:150px" alt="adafri">
+                            </div>
+                            <p class="desc-status">
+                              Votre campagne est arrivée à terme<br>
+                              Nous esperons que votre objectif a été atteint.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </mat-expansion-panel>
                 <mat-expansion-panel class="p-2">
@@ -320,18 +390,15 @@
                   <mat-panel-title>
                     <div class="d-flex">
                       <div class="d-flex align-items-center justify-content-center">
-                        <span class="mx-2" matTooltip="{{'tooltips.online'|translate}}"
-                        style="background-color: var(--adf-green-800);
-                        width: 15px;height: 15px;border-radius: 50%;"></span>
+                        <span class="mx-2 status-green" matTooltip="{{'tooltips.online'|translate}}"></span>
                       </div>
                       <div class="mx-2 text-nowrap">
                         <h4 class="m-0 p-0 fw-bold"
                         matTooltip="TOUBA CA KANAM OK-5949889272"
-                        >TOUBA CA KANAM OK-5949889272</h4>
-                        <span class="m-0 p-0" 
-                        style="color:var(--adf-gray-600);margin-top: -50px;"
-                        matTooltip="Display">
-                          Display</span>
+                        >
+                          <a routerLink="/campaign/list" class="text-decoration-none">TOUBA CA KANAM OK-5949889272</a>
+                        </h4>
+                        <span class="m-0 p-0 status-red" matTooltip="Display"> Display</span>
                       </div>
                     </div>
                   </mat-panel-title>
@@ -342,7 +409,7 @@
                           <span class="fw-bold">
                             {{ 'navigation.dashboard.ads_performance.clicks' | translate }}
                           </span><br>
-                          <span style="color: black;">4919</span>
+                          <span class="black">4919</span>
                         </div>
                       </div>
                       <div class="col">
@@ -350,20 +417,85 @@
                           <span class="fw-bold">
                             {{ 'tooltips.costs' | translate }}
                           </span><br>
-                          <span style="color: black;">$121.03</span>
+                          <span class="black">$121.03</span>
                         </div>
                       </div>
                       <div class="col">
                         <div class="h-100">
                           <span class="fw-bold">Impressions</span><br>
-                          <span style="color: black;">450841</span>
+                          <span class="black">450841</span>
                         </div>
                       </div>
                     </div>
                   </mat-panel-description>
                   </mat-expansion-panel-header>
-                    <div class="expension-container bg-warning">
-                      <p>Ceci est le contenu</p>
+                    <div class="expension-container">
+                      <div class="container" style="min-height: 200px;">
+                        <div class="row">
+                          <div class="col col-6">
+                            <div class="carousel-container">
+                              <ngb-carousel *ngIf="images">
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[0]" alt="Random first slide" />
+                                  </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[1]" alt="Random second slide" />
+                                  </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                  <div class="picsum-img-wrapper">
+                                    <img class="w-100" [src]="images[2]" alt="Random third slide" />
+                                  </div>
+                                </ng-template>
+                              </ngb-carousel>
+                              <div class="row px-1 pb-2">
+                                <div class="col col-3">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'tooltips.announcement' | translate }}</h5>
+                                  <button class="action-btn" [matMenuTriggerFor]="actionsMenu">
+                                    <span class="material-symbols-outlined icon-green icon">play_circle</span>
+                                    <span class="mx-1">{{'campaign.activated'|translate}}</span>
+                                    <span class="material-symbols-outlined icon">arrow_drop_down</span>
+                                  </button>
+                                  <mat-menu #actionsMenu="matMenu">
+                                    <button mat-menu-item class="d-flex align-items-center">
+                                      <span class="material-symbols-outlined icon icon-green ">play_circle</span>
+                                      <span class="mx-2">{{'campaign.activated'|translate}}</span>
+                                    </button>
+                                    <button mat-menu-item class="d-flex align-items-center">
+                                      <span class="material-symbols-outlined icon icon-green ">pause_circle</span>
+                                      <span class="mx-2">{{'campaign.pause'|translate}}</span>
+                                    </button>
+                                  </mat-menu>
+                                </div>
+                                <div class="col col-3 text-center">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'navigation.dashboard.ads_performance.clicks' | translate }}</h5>
+                                  <span class="w-100 fw-bold text-center">4919</span>
+                                </div>
+                                <div class="col col-3 text-center">
+                                  <h5 class="fw-bold m-0 p-0">{{ 'tooltips.costs' | translate }}</h5>
+                                  <span class="w-100 fw-bold">$121.03</span>
+                                </div>
+                                <div class="col col-3 text-end">
+                                  <h5 class="fw-bold m-0 p-0">Impressions</h5>
+                                  <span class="w-100 fw-bold">450851</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col col-6">
+                            <div class="d-flex justify-content-center">
+                              <img src="assets/images/success.svg" style="margin-bottom:-10px;max-height:150px" alt="adafri">
+                            </div>
+                            <p class="desc-status">
+                              Félicitation votre campagne est prête.<br>
+                              Votre campagne est éligible, suivez l'évolution de votre campagne en temps réel grâce à notre algorithme.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </mat-expansion-panel>
                 <mat-expansion-panel class="p-2">
@@ -378,7 +510,9 @@
                       <div class="mx-2 text-nowrap">
                         <h4 class="m-0 p-0 fw-bold"
                         matTooltip="TOUBA CA KANAM OK-5949889272"
-                        >TOUBA CA KANAM OK-5949889272</h4>
+                        >
+                          <a routerLink="/campaign/list" class="text-decoration-none">TOUBA CA KANAM OK-5949889272</a>
+                        </h4>
                         <span class="m-0 p-0" 
                         style="color:var(--adf-gray-600);margin-top: -50px;"
                         matTooltip="Display">
@@ -414,7 +548,7 @@
                   </mat-panel-description>
                   </mat-expansion-panel-header>
                     <div class="expension-container bg-warning">
-                      <p>Ceci est le contenu</p>
+                      <p>Ceci est le container</p>
                     </div>
                 </mat-expansion-panel>
               </mat-accordion>
@@ -422,162 +556,6 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-      <!-- <mat-grid-tile [colspan]="4" [rowspan]="1">
-        <mat-card class="dashboard-card">
-          <mat-card-header>
-            <mat-card-title>
-              <div class="d-flex align-items-center">
-                <span class="material-symbols-outlined">edit_note</span>
-                <span class="mx-2">{{ 'navigation.dashboard.draft.title' | translate }}</span>
-              </div>
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="dashboard-card-content dash-md">
-            <div class="d-none">
-              <img src="assets/images/empty.svg" alt="adafri">
-              <p>{{ 'campaign.no_data' | translate }}</p>
-            </div>
-            <div class="w-100">
-              <p class="description fw-bold text-start m-0 mb-2">{{ 'navigation.dashboard.draft.description' | translate }}</p>
-              <div class="tiles w-100">
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-tile d-flex w-100">
-                  <div class="icon">
-                    <span class="material-symbols-outlined">pending_actions</span>
-                  </div>
-                  <div class="infos w-100 h-100">
-                    <div class="mx-2 d-flex justify-content-between w-100">
-                      <h4 class="m-0 p-0 fw-bold">Campaign-12932384923</h4>
-                      <span class="mx-2 my-0 p-0 text-uppercase">Display</span>
-                    </div>
-                    <div class="text-start w-100 px-2">
-                      <a routerLink="/campaign/list">{{'buttons.reactive_campaign'|translate}}</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile> -->
     </div>
   </mat-grid-list>
 </div>

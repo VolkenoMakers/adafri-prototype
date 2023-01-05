@@ -8,14 +8,14 @@ import { ThemesService } from '../../services/themes/themes.service';
   selector: 'app-main-navbar',
   templateUrl: './main-navbar.component.html',
   styleUrls: ['./main-navbar.component.scss'],
-  // encapsulation: ViewEncapsulation,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class MainNavbarComponent implements OnInit {
 
-  public isFullScreen:boolean = false 
+  public isFullScreen:boolean = false;
   public isDarkMode: boolean = false;
-  public activeTheme: string = 'white-mode'
-  public actualLanguage: string = 'fr'
+  public activeTheme: string = 'white-mode';
+  public actualLanguage: string = 'fr';
 
   
   constructor(

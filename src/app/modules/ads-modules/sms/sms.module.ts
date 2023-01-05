@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SmsRoutingModule } from './sms-routing.module';
-import { SmsComponent } from './sms.component';
+import { CreateSmsComponent } from './components/create-sms/create-sms.component';
 
 
 @NgModule({
   declarations: [
-    SmsComponent
+    CreateSmsComponent
   ],
   imports: [
     CommonModule,

@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { BillboardsRoutingModule } from './billboards-routing.module';
-import { BillboardsComponent } from './billboards.component';
+import { CreateBillboardComponent } from './components/create-billboard/create-billboard.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { PreviewPannelsComponent } from './components/preview-pannels/preview-pannels.component';
 
 
 @NgModule({
   declarations: [
-    BillboardsComponent
+    CreateBillboardComponent,
+    PreviewPannelsComponent
   ],
   imports: [
     CommonModule,
+    CoreModule,
     BillboardsRoutingModule
   ]
 })

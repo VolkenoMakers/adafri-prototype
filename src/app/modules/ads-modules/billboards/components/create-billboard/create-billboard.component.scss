@@ -1,0 +1,54 @@
+:host {
+    main {
+        min-height: calc(100vh - 64px);
+        display: flex;
+        justify-content: center;
+        .container {
+            margin: 0 auto;
+            max-width: 1088px;
+            margin: 0 auto;
+            .single-country {
+                padding: 5px;
+                border-radius: 7px;
+                overflow: hidden;
+                cursor: pointer;
+                img {
+                    border-radius: 4.5px;
+                }
+                .check-icon {
+                    font-size: 15px;
+                    top: 10px;
+                    left: 10px;
+                    font-weight: bold;
+                    color: var(--adf-blue-700);
+                    background-color: rgba(255, 255, 255, 0.9);
+                    border-radius: 4.5px;
+                    padding: 2px 4px;
+                }
+            }
+        }
+    }
+}
+
+
+// ONLY COLORS 
+.white-mode {
+    :host{
+        main {
+            background-color: var(--adf-gray-400);
+            .container {
+                .single-country {
+                    background-color: var(--adf-gray-400);
+                }
+            }
+        }
+    }
+}
+//ONLY COLORS
+.dark-mode {
+    :host {
+        main {
+            background-color: var(--adf-black-800);
+        }
+    }
+}
