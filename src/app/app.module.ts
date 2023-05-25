@@ -10,6 +10,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { LOCALE_ID } from '@angular/core';
+registerLocaleData(localeFr, 'fr');
 
 export function createTranslateLoader(httpClient:HttpClient){
     return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json')
@@ -19,7 +23,7 @@ export function createTranslateLoader(httpClient:HttpClient){
     declarations: [
         AppComponent,
     ],
-    providers: [],
+    providers: [ { provide: LOCALE_ID, useValue: "fr-FR" }],
     bootstrap: [AppComponent],
     imports: [
         TranslateModule.forRoot({

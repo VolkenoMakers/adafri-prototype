@@ -64,6 +64,14 @@ export class MainNavbarComponent implements OnInit {
   logout(){
     this.router.navigate(['security/login'])
   }
+
+  goProfile(){
+    this.router.navigate(['setting/profile'])
+  }
+
+  goAccountAccess(){
+    this.router.navigate(['setting/account-access'])
+  }
 }
 
 

@@ -111,6 +111,18 @@ export class CreateBillboardComponent implements OnInit {
       alert(this.range.value.end)
   }
 
+  files: File[] = [];
+
+  onSelectFile(event:any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemoveFile(event:any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
   openPreviewDialog(){
     this.dialog.open(PreviewPannelsComponent, {
       height: '80vh',

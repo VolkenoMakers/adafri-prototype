@@ -26,7 +26,7 @@ export class RegisterPageComponent implements OnInit {
   register(){
     this.isLoading = true
     setTimeout(() => {
-      this.router.navigate(['overview'])
+      this.router.navigate(['security/confirm'])
     }, 3000);
   }
 

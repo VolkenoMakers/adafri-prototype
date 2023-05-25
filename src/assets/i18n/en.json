@@ -1,5 +1,9 @@
 {
     "no_internet": "No internet connection",
+    "recharge": {
+        "amount_dollar": "Amount in US dollars",
+        "amount_top_up": "Enter the amount to top up in $"
+    },
     "campaign": {
         "pause": "Pause",
         "activated": "Activated",
@@ -75,7 +79,9 @@
             "mali_screens": "Our screens in Mali",
             "preview_description": "We bring you visibility with our led screens in Senegal and Mali",
             "cars_per_days": "cars per day",
-            "upload_title": "Upload a photo or video"
+            "upload_title": "Select or upload a photo or video",
+            "available_files": "Select from your available files",
+            "drag_or_click": "Drag file here or click to upload"
         }
     },
     "buttons": {
@@ -83,11 +89,12 @@
         "reactive_campaign": "Reactivate draft campaign",
         "cancel": "Cancel",
         "more_details": "More details",
-        "i_valid": "I valid",
+        "i_valid": "Validate",
         "proceed_payement": "Proceed to payment"
     },
     "settings": {
-        "appearance": "Appearence"
+        "appearance": "Appearence",
+        "account_access": "Account access"
     },
     "tooltips": {
         "announcement": "Announcement",
@@ -121,7 +128,79 @@
         "lastname": "Lastname",
         "confirmpassword": "Confirm password",
         "registration_btn_google": "sign-up with google",
-        "have_account": "Already have an account ?"
+        "have_account": "Already have an account ?",
+        "finalize_register": "Fill in the fields below to finalize your registration.",
+        "invoicing_elements": "Invoicing elements",
+        "advertising_account": "Advertising account",
+        "mail_address":"Mail address",
+        "company_name": "Company name",
+        "phone_number": "Phone number",
+        "activity_area": "Activity Area",
+        "how_know": "How did you find out about ADAFRI ?",
+        "tell_us_how_know": "Tell us how did you hear about ADAFRI ?",
+        "mouth_to_ear": "From mouth to ear",
+        "referring_site": "Referring site",
+        "social_media": "Social media",
+        "from_ads": "From ads",
+        "saloon": "Lounge",
+        "choose_activity_area": "Choose your activity area",
+        "corp_name": "Enter company name",
+        "enter_phone_number": "Enter your phone number",
+        "enter_email": "Enter your email address",
+        "enter_firstname": "Enter your first name",
+        "enter_lastname": "Enter your last name",
+        "identifier_of_this_account": "Identifier of this account",
+        "identifier_desc": "This identifies this account",
+        "pick_one": "Pick one",
+        "business_lines_options": {
+            "politics": "Politics",
+            "construction": "Construction",
+            "lottery": "Lottery",
+            "communication_agency": "Communication agency",
+            "crafts_arts": "Crafts",
+            "directory_community": "Directory / Community",
+            "ecommerce_marketplace": "E-commerce /Marketplace",
+            "energy": "Energy",
+            "blog": "Blog",
+            "fashion_beauty_wellness": "Fashion/Beauty/Wellness",
+            "app_software": "App/Software",
+            "finances_fintech": "Finances/Fintech",
+            "horeca": "Horeca",
+            "services": "Services",
+            "health": "Health",
+            "immovable": "Immovable",
+            "delivery_logistics": "Delivery/Logistics",
+            "media": "Media",
+            "gifts": "Gifts",
+            "culture_entertainment": "Culture/Entertainment",
+            "car_dealer_garage": "Car dealer / garage",
+            "travels": "Travels",
+            "institutions": "Institutions",
+            "association": "Association",
+            "agro_business": "Agro industry",
+            "bank_insurance": "Bank",
+            "communication": "Communication",
+            "higher_institute": "Higher Institute",
+            "edutech": "Edutech",
+            "telecom": "Telecom",
+            "products_FMCG": "Products and FMCG",
+            "house_decoration": "Articles and decoration Home",
+            "home_appliance": "Home appliance",
+            "multimedia": "Multimedia",
+            "freelance": "Freelance",
+            "cabinet": "Cabinet",
+            "partner": "Partner"
+        }
+    },
+    "transactions": {
+        "author": "Author of the transaction",
+        "type": "Transaction type",
+        "recharge": "Account top up",
+        "date": "Transaction date",
+        "amount": "Transaction amount",
+        "total_expenses": "Total expenses",
+        "last_payement": "Last payement",
+        "account_balance": "Account balance"
     },
     "navigation": {
         "aside": {
@@ -135,6 +214,8 @@
         },
         "dashboard": {
             "date": {
+                "today": "Today",
+                "yesterday": "Yesterday",
                 "seven_last_days": "Last 7 days",
                 "show_last_30_days": "Show last 30 days"
             },

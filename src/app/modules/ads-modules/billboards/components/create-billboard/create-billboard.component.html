@@ -79,9 +79,33 @@
         </mat-card>
 
         <mat-card class="my-2 file-upload-card" *ngIf="step === 2">
-            <mat-card-header *ngIf="!videoUrl && !imageUrl">
-                <h4 class="fw-bold">{{ 'campaign.billboards.upload_title' | translate }}</h4>
-            </mat-card-header>
+            <h4 *ngIf="!videoUrl && !imageUrl" class="fw-bold mb-3">
+                {{ 'campaign.billboards.upload_title' | translate }}
+            </h4>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <h4>{{'campaign.billboards.available_files'|translate}}</h4>
+                        <div>
+                            <!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-image-preview> -->
+                            <!-- <ngx-dropzone-video-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-video-preview>                               -->
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4>{{'campaign.billboards.drag_or_click'|translate}}</h4>
+                        <ngx-dropzone (change)="onSelectFile($event)">
+                            <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemoveFile(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                    </div>
+                </div>
+            </mat-card-content>
         </mat-card>
     </div>
 </main>

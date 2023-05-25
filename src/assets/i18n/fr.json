@@ -1,5 +1,9 @@
 {
     "no_internet": "Pas de connexion internet",
+    "recharge": {
+        "amount_dollar": "Montant en dollars US",
+        "amount_top_up": "Saisissez le montant a recharger en $"
+    },
     "campaign": {
         "pause": "Mettre en pause",
         "activated": "Activée",
@@ -75,7 +79,9 @@
             "mali_screens": "Nos écrans au Mali",
             "preview_description": "Nous vous apportons une visibilité avec nos écrans led au Sénégal et au Mali.",
             "cars_per_days": "véhicules par jour",
-            "upload_title": "Téléverser une photo ou video"
+            "upload_title": "Sélectionner ou télécharger une photo ou une vidéo",
+            "available_files": "Sélectionner parmi vos fichiers disponibles",
+            "drag_or_click": "Faites glisser le fichier ici ou cliquez pour télécharger"
         }
     },
     "buttons": {
@@ -87,7 +93,8 @@
         "proceed_payement": "Procéder au paiement"
     },
     "settings": {
-        "appearance": "Apparence"
+        "appearance": "Apparence",
+        "account_access": "Accès au compte"
     },
     "tooltips": {
         "announcement": "Annonce",
@@ -121,7 +128,79 @@
         "lastname": "Nom",
         "confirmpassword": "Confirmez le mot de passe",
         "registration_btn_google": "Inscrivez-vous avec Google",
-        "have_account": "Vous avez déjà un compte ?"
+        "have_account": "Vous avez déjà un compte ?",
+        "finalize_register": "Renseignez les champs ci dessous pour finaliser votre inscription",
+        "invoicing_elements": "Eléments de facturation",
+        "advertising_account": "Compte publicitaire",
+        "mail_address":"Adresse e-mail",
+        "company_name": "Nom de l'entreprise",
+        "phone_number": "Numéro de téléphone",
+        "activity_area": "Secteur d'activité",
+        "how_know": "Comment avez-vous connu ADAFRI ?",
+        "tell_us_how_know": "Dites-nous comment avez-vous connu ADAFRI ?",
+        "mouth_to_ear": "De bouche à oreille",
+        "social_media": "Des médias sociaux",
+        "referring_site": "Site référent",
+        "from_ads": "Des annonces",
+        "saloon": "Salon",
+        "choose_activity_area": "Choisissez votre  secteur d'activité",
+        "corp_name": "Entrez le nom de l'entreprise",
+        "enter_phone_number": "Entrez votre numéro de téléphone",
+        "enter_email": "Entrez votre adresse mail",
+        "enter_firstname": "Entrez votre prénom",
+        "enter_lastname": "Entrez votre nom",
+        "identifier_of_this_account": "L'identifiant de ce compte",
+        "identifier_desc": "Ceci permet d'identifier ce compte",
+        "pick_one": "Choisissez-en un",
+        "business_lines_options": {
+            "politics": "Politique",
+            "construction": "BTP",
+            "lottery": "Loterie",
+            "communication_agency": "Agence de communication",
+            "crafts_arts": "Artisanat / Art",
+            "directory_community": "Annuaire / Communauté",
+            "ecommerce_marketplace": "E-commerce /Marketplace",
+            "energy": "Energie",
+            "blog": "Blog",
+            "fashion_beauty_wellness": "Mode/Beauté/Bien être",
+            "app_software": "App/Software",
+            "finances_fintech": "Finances/Fintech",
+            "horeca": "Horeca",
+            "services": "Services",
+            "health": "Santé",
+            "immovable": "Immobilier",
+            "delivery_logistics": "Livraison/Logistique",
+            "media": "Médias",
+            "gifts": "Cadeaux",
+            "culture_entertainment": "Culture/Divertissement",
+            "car_dealer_garage": "Concessionnaire / garage automobile",
+            "travels": "Voyages",
+            "institutions": "Institutions",
+            "association": "Association",
+            "agro_business": "Agro-industrie",
+            "bank_insurance": "Banque/Assurance",
+            "communication": "Communication",
+            "higher_institute": "Institut Supérieur",
+            "edutech": "Edutech",
+            "telecom": "Télécom",
+            "products_FMCG": "Produits et FMCG",
+            "house_decoration": "Articles et déco Maison",
+            "home_appliance": "Electroménager",
+            "multimedia": "Multimedia",
+            "freelance": "Freelance",
+            "cabinet": "Cabinet",
+            "partner": "Partenaire"
+        }
+    },
+    "transactions": {
+        "author": "Auteur de la transaction",
+        "type": "Type de transaction",
+        "recharge": "Rechargement du compte",
+        "date": "Date de la transaction ",
+        "amount": "Montant de la transaction",
+        "total_expenses": "Dépenses totales",
+        "last_payement": "Dernier paiement",
+        "account_balance": "Solde du compte"
     },
     "navigation": {
         "aside": {
@@ -135,6 +214,8 @@
         },
         "dashboard": {
             "date": {
+                "today": "Aujourd'hui",
+                "yesterday": "Hier",
                 "seven_last_days": "7 derniers jours",
                 "show_last_30_days": "Afficher les 30 dernies jours"
             },

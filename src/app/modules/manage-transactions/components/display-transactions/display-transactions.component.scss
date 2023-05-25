@@ -1,0 +1,57 @@
+:host {
+    main{
+        width: 100% !important;
+        background-image: url(../../../../../assets/images/background.svg);
+        background-position: center;
+        background-size: contain;
+        background-attachment: fixed;
+        min-height: calc(100vh - 128px);
+    }
+    .card-table {
+        border-radius: 7px !important;
+        overflow:  hidden !important;
+    }
+    .big-container {
+        max-width: 1088px;
+        table {
+            max-height: 70vh;
+        }
+        .row {
+            .col {
+                .trans-card {
+                    height: 100%;
+                    position: relative;
+                    color: var(--adf-white);
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                    .icon { 
+                        position: absolute;
+                        bottom: 50%;
+                        right: 0;
+                        transform: translateY(50%);
+                        opacity: .6;
+                        font-size: 80px;
+                    }
+                    .value {
+                        font-weight: 800;
+                        font-size: 25px;
+                    }
+                }
+                .balance-card {
+                    background-color: var(--adf-blue-700);
+                }
+                .last-pay-card {
+                    background-color: var(--adf-blue-600);
+                    .value {
+                        font-size: 13px;
+                    }
+                }
+                .total-expenses-card {
+                    background-color: var(--adf-blue-500);
+                }
+            }
+        }
+    }
+}

@@ -37,7 +37,11 @@ import { NgbCarouselModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdfToastComponent } from './components/adf-toast/adf-toast.component';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MainNavbarComponent,
     AdfBtnComponent,
     LoadingPageComponent,
-    SearchDialog,
+    SearchDialog
   ],
   imports: [
     MatSelectModule,
@@ -85,8 +89,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     ThemesService
   ],
   exports: [
+    MatSortModule,
+    MatAutocompleteModule,
+    NgxDropzoneModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
     MatOptionModule,

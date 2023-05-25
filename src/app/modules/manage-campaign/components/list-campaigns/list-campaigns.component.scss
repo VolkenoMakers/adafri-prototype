@@ -1,0 +1,18 @@
+:host {
+    main {
+        width: 100% !important;
+        background-image: url(../../../../../assets/images/background.svg);
+        background-position: center;
+        background-size: contain;
+        background-attachment: fixed;
+        min-height: calc(100vh - 128px);
+        padding-top: 20px;
+        padding-bottom: 40px;
+        mat-card {
+            .big-container {
+                max-width: 1088px;
+                margin:auto;
+            }
+        }   
+    }
+}

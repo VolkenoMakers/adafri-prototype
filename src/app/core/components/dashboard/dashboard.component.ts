@@ -10,7 +10,6 @@ import { RechargeAccountComponent } from '../recharge-account/recharge-account.c
 })
 export class DashboardComponent implements AfterViewInit {
 
-  public toastMessage: string = "Lorem ipsum"
   public isLoading: boolean = true;
   public dataChart: GoogleChartInterface = {
     chartType: GoogleChartType.AreaChart,

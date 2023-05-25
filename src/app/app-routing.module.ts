@@ -6,11 +6,14 @@ import { FullComponent } from './layouts/full/full.component';
 import { NavigationComponent } from './layouts/navigation/navigation.component';
 import { NewCampaignComponent } from './modules/manage-campaign/components/new-campaign/new-campaign.component';
 import { ListCampaignsComponent } from './modules/manage-campaign/components/list-campaigns/list-campaigns.component';
+import { ConfirmRegisterPageComponent } from './modules/security/components/confirm-register-page/confirm-register-page.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { 
     path: '', 
     component: NavigationComponent,
+    // canActivateChild: [AuthGuard],
     children: [
       {
         path: '',
@@ -37,7 +40,7 @@ const routes: Routes = [
     ],
   },
   { 
-    path: 'full', 
+    path: 'fl',
     component: FullComponent,
     children: [
       {
@@ -68,6 +71,10 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterPageComponent
+      },
+      {
+        path: 'confirm',
+        component: ConfirmRegisterPageComponent
       }
     ]
   }
