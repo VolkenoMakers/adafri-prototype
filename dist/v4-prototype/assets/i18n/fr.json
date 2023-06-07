@@ -1,0 +1,266 @@
+{
+    "no_internet": "Pas de connexion internet",
+    "recharge": {
+        "amount_dollar": "Montant en dollars US",
+        "amount_top_up": "Saisissez le montant a recharger en $"
+    },
+    "campaign": {
+        "pause": "Mettre en pause",
+        "activated": "Activée",
+        "basic_setup": "Configuration de base",
+        "choose_goal": {
+            "title": "Choisissez votre objectif",
+            "description": "Sélectionnez un objectif pour adapter votre expérience aux objectifs et paramètres les plus efficaces pour votre campagne"
+        },
+        "choose_campaign_type": {
+            "title": "Sélectionnez un type de campagne",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_broadcast_channel": {
+            "title": "Sélectionnez une chaîne de diffusion",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_campaign_name": {
+            "title": "Choisissez un nom pour la campagne",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
+        "new": "Nouvelle campagne",
+        "resume_draft": "Reprendre une campagne brouillon",
+        "no_data": "Pas de données",
+        "logout": "Se déconnecter",
+        "sales": {
+            "title": "Ventes",
+            "description": "Générer des ventes en ligne, via une application, par téléphone ou en magasin"
+        },
+        "prospects": {
+            "title": "Prospects",
+            "description": "Attirer les prospects et générer d'autres conversions en encourageant les clients à passer à l'action"
+        },
+        "trafic_to_website": {
+            "title": "Trafic vers un site web",
+            "description": "Attirer sur votre site Web les personnes intéressées par vos produits ou services"
+        },
+        "promotion_product_brand": {
+            "title": "Considération du produit et de la marque",
+            "description": "Inciter les utilisateurs à découvrir vos produits ou services"
+        },
+        "brand_coverage_awareness": {
+            "title": "Couverture et notoriété de la marque",
+            "description": "Toucher une audience élargie et renforcer la notoriété de votre marque"
+        },
+        "promote_app": {
+            "title": "Promotion d'une application",
+            "description": "Générer plus d'installations, d'engagement et de préinscriptions pour votre application"
+        },
+        "promotions_visits": {
+            "title": "Promotions et visites en magasin",
+            "description": "Attirer des visiteurs dans votre établissement (y compris un restaurant ou une concession automobile)"
+        },
+        "without_goal": {
+            "title": "Créer une campagne sans objectif spécifique",
+            "description": "Choisir directement un type de campagne sans passer par les recommandations basées sur vos objectifs"
+        },
+        "billboards": {
+            "title": "Campagnes panneaux publicitaires",
+            "screen_type": "Type d'écran",
+            "choose_screen_type": "Choisissez un type d'écran",
+            "dooh_title": "Publicité Extérieure Numérique",
+            "led_screen_title": "Ecran LED (AUCHAN)",
+            "choose_countries": "Selectionnez un ou plusieurs pays",
+            "broadcast_period": "Période de diffusion",
+            "choose_broadcast_period": "Saisissez une plage de date",
+            "start_date": "Date Début",
+            "end_date": "Date Fin",
+            "broadcast_locations": "Emplacements de diffusion",
+            "locations": "Emplacements",
+            "choosed_locations": "emplacement(s) sélectionné(s)",
+            "preview_pannels": "Aperçu des panneaux",
+            "senegal_screens": "Nos écrans au Sénégal",
+            "mali_screens": "Nos écrans au Mali",
+            "preview_description": "Nous vous apportons une visibilité avec nos écrans led au Sénégal et au Mali.",
+            "cars_per_days": "véhicules par jour",
+            "upload_title": "Sélectionner ou télécharger une photo ou une vidéo",
+            "available_files": "Sélectionner parmi vos fichiers disponibles",
+            "drag_or_click": "Faites glisser le fichier ici ou cliquez pour télécharger"
+        }
+    },
+    "buttons": {
+        "create_campaign": "Créer campagne",
+        "reactive_campaign": "Réactiver la campagne brouillon",
+        "cancel": "Annuler",
+        "more_details": "Plus de détails",
+        "i_valid": "Je valide",
+        "proceed_payement": "Procéder au paiement"
+    },
+    "settings": {
+        "appearance": "Apparence",
+        "account_access": "Accès au compte"
+    },
+    "tooltips": {
+        "announcement": "Annonce",
+        "costs": "Coûts",
+        "online": "En ligne",
+        "offline": "Hors ligne",
+        "completed": "Terminée",
+        "full_screen": "Plein écran",
+        "search": "Rechercher",
+        "dark_mode": "Mode sombre",
+        "languages": {
+            "title": "Langues",
+            "french": "Francais",
+            "english": "Anglais"
+        },
+        "need_help": "Besoin d'aide ?"
+    },
+    "login": {
+        "title": "S'identifier.",
+        "subtitle": "Bienvenue, veuillez entrer vos coordonnées.",
+        "password": "Mot de passe",
+        "password_forgotten": "Mot de passe oublié ?",
+        "or": "OU",
+        "submit": "Soumettre",
+        "login_btn_google": "Connectez-vous avec Google",
+        "dont_have_account": "Vous n'avez pas de compte?"
+    },
+    "registration": {
+        "title": "S'inscire.",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "confirmpassword": "Confirmez le mot de passe",
+        "registration_btn_google": "Inscrivez-vous avec Google",
+        "have_account": "Vous avez déjà un compte ?",
+        "finalize_register": "Renseignez les champs ci dessous pour finaliser votre inscription",
+        "invoicing_elements": "Eléments de facturation",
+        "advertising_account": "Compte publicitaire",
+        "mail_address":"Adresse e-mail",
+        "company_name": "Nom de l'entreprise",
+        "phone_number": "Numéro de téléphone",
+        "activity_area": "Secteur d'activité",
+        "how_know": "Comment avez-vous connu ADAFRI ?",
+        "tell_us_how_know": "Dites-nous comment avez-vous connu ADAFRI ?",
+        "mouth_to_ear": "De bouche à oreille",
+        "social_media": "Des médias sociaux",
+        "referring_site": "Site référent",
+        "from_ads": "Des annonces",
+        "saloon": "Salon",
+        "choose_activity_area": "Choisissez votre  secteur d'activité",
+        "corp_name": "Entrez le nom de l'entreprise",
+        "enter_phone_number": "Entrez votre numéro de téléphone",
+        "enter_email": "Entrez votre adresse mail",
+        "enter_firstname": "Entrez votre prénom",
+        "enter_lastname": "Entrez votre nom",
+        "identifier_of_this_account": "L'identifiant de ce compte",
+        "identifier_desc": "Ceci permet d'identifier ce compte",
+        "pick_one": "Choisissez-en un",
+        "business_lines_options": {
+            "politics": "Politique",
+            "construction": "BTP",
+            "lottery": "Loterie",
+            "communication_agency": "Agence de communication",
+            "crafts_arts": "Artisanat / Art",
+            "directory_community": "Annuaire / Communauté",
+            "ecommerce_marketplace": "E-commerce /Marketplace",
+            "energy": "Energie",
+            "blog": "Blog",
+            "fashion_beauty_wellness": "Mode/Beauté/Bien être",
+            "app_software": "App/Software",
+            "finances_fintech": "Finances/Fintech",
+            "horeca": "Horeca",
+            "services": "Services",
+            "health": "Santé",
+            "immovable": "Immobilier",
+            "delivery_logistics": "Livraison/Logistique",
+            "media": "Médias",
+            "gifts": "Cadeaux",
+            "culture_entertainment": "Culture/Divertissement",
+            "car_dealer_garage": "Concessionnaire / garage automobile",
+            "travels": "Voyages",
+            "institutions": "Institutions",
+            "association": "Association",
+            "agro_business": "Agro-industrie",
+            "bank_insurance": "Banque/Assurance",
+            "communication": "Communication",
+            "higher_institute": "Institut Supérieur",
+            "edutech": "Edutech",
+            "telecom": "Télécom",
+            "products_FMCG": "Produits et FMCG",
+            "house_decoration": "Articles et déco Maison",
+            "home_appliance": "Electroménager",
+            "multimedia": "Multimedia",
+            "freelance": "Freelance",
+            "cabinet": "Cabinet",
+            "partner": "Partenaire"
+        }
+    },
+    "transactions": {
+        "author": "Auteur de la transaction",
+        "type": "Type de transaction",
+        "recharge": "Rechargement du compte",
+        "date": "Date de la transaction ",
+        "amount": "Montant de la transaction",
+        "total_expenses": "Dépenses totales",
+        "last_payement": "Dernier paiement",
+        "account_balance": "Solde du compte"
+    },
+    "navigation": {
+        "aside": {
+            "overview": "Vue d'ensemble",
+            "transactions": "Transactions",
+            "campaigns": "Campagnes",
+            "settings": "Paramètres",
+            "files": "Gest. de fichiers",
+            "others_products":  "Autres produits",
+            "survey_ussd": "Sondage par USSD"
+        },
+        "dashboard": {
+            "date": {
+                "today": "Aujourd'hui",
+                "yesterday": "Hier",
+                "seven_last_days": "7 derniers jours",
+                "show_last_30_days": "Afficher les 30 dernies jours"
+            },
+            "ads_performance": {
+                "title": "Performances publicitaires",
+                "clicks": "Clics",
+                "cond_camps": "Camp. menées",
+                "cond_camps_full": "Campagnes menées",
+                "average_costs": "Coûts moy.",
+                "average_costs_full": "Coûts moyens",
+                "expenses": "Dépenses",
+                "pay": "Solde"
+            },
+            "account": {
+                "title": "Compte",
+                "company": "Entreprise",
+                "identifier": "Identifiant",
+                "recharge_account": "Recharger compte"
+            },
+            "billing": {
+                "title": "Facturation",
+                "description": "Derniers versements effectués"
+            }, 
+            "search_keywords": {
+                "title": "Mots clés de recherche"
+            },
+            "networks": {
+                "title": "Reseaux"
+            },
+            "draft": {
+                "title": "Brouillons",
+                "description": "Continuez à créer vos campagnes"
+            },
+            "summary": {
+                "title": "Récapitulatif des campagnes"
+            }
+        },
+        "file_manager": {
+            "title": "Gestionnaire de fichiers",
+            "add_file": "Ajouter fichier",
+            "storage": "Stockage",
+            "files_detected": "fichiers détectés",
+            "contacts_detected": "contacts détectés",
+            "files": "fichiers",
+            "only_needed_files": "Téléversez uniquement les fichiers nécessaires à vos campagnes !"
+        }
+    }
+}

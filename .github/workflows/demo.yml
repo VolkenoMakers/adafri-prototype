@@ -1,0 +1,46 @@
+name: build
+
+on:
+  push:
+    branches: 
+      - demo
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.15.0
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.15.0'
+    - name: Install yarn and run unittest
+      run: |
+        yarn
+      env:
+        CI: false
+    - name: Publish to Github Packages Registry
+      uses: elgohr/Publish-Docker-Github-Action@v4
+      with:
+        name: volkenomakers/adafri-prototype/demo
+        registry: ghcr.io
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        dockerfile: Dockerfile.demo
+        tags: latest
+        
+    - name: Deploy package to digitalocean
+      uses: appleboy/ssh-action@master
+      env:
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        host: ${{ secrets.DROPLET_DEMO_HOST }}
+        username: ${{ secrets.DROPLET_DEMO_USERNAME }}
+        password: ${{ secrets.DROPLET_DEMO_PASSWORD }}
+        port: ${{ secrets.DROPLET_DEMO_PORT }}
+        envs: USERNAME, GITHUB_TOKEN
+        script: |
+          docker stop adafri_demo_container || true && docker rm adafri_demo_container || true
+          docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io 
+          docker pull ghcr.io/volkenomakers/adafri-prototype/demo:latest
+          docker run -p 2400:80 -d --name adafri_demo_container ghcr.io/volkenomakers/adafri-prototype/demo:latest

@@ -1,0 +1,266 @@
+{
+    "no_internet": "No internet connection",
+    "recharge": {
+        "amount_dollar": "Amount in US dollars",
+        "amount_top_up": "Enter the amount to top up in $"
+    },
+    "campaign": {
+        "pause": "Pause",
+        "activated": "Activated",
+        "basic_setup": "Basic Setup",
+        "choose_goal": {
+            "title": "Choose your goal",
+            "description": "Select an objective to tailor your experience to the most effective objectives and settings for your campaign"
+        },
+        "choose_campaign_type": {
+            "title": "Select a campaign type",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        }, 
+        "choose_broadcast_channel": {
+            "title": "Select a broadcast channel",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ad inventore perspiciatis iure sit eaque eius dolor illum vel officiis, delectus voluptatem, distinctio provident dolore nostrum architecto quas at aliquid."
+        },
+        "choose_campaign_name": {
+            "title": "Choose a name for the campaign",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
+        "new": "New campaign",
+        "resume_draft": "Resume a draft campaign",
+        "no_data": "No data",
+        "logout": "Sign out",
+        "sales": {
+            "title": "Sales",
+            "description": "Generate sales online, via app, by phone or in-store"
+        },
+        "prospects": {
+            "title": "Leads",
+            "description": "Attract leads and drive further conversions by encouraging customers to take action"
+        },
+        "trafic_to_website": {
+            "title": "Traffic to website",
+            "description": "Attract people interested in your products or services to your website"
+        },
+        "promotion_product_brand": {
+            "title": "Product and brand consideration",
+            "description": "Encourage users to discover your products or services"
+        },
+        "brand_coverage_awareness": {
+            "title": "Brand coverage and awareness",
+            "description": "Reach a wider audience and strengthen your brand awareness"
+        },
+        "promote_app": {
+            "title": "Promoting an app",
+            "description": "Drive more installs, engagement, and pre-registrations for your app"
+        },
+        "promotions_visits": {
+            "title": "Promotions and store visits",
+            "description": "Attract visitors to your establishment (including a restaurant or car dealership)"
+        },
+        "without_goal": {
+            "title": "Create a campaign without a specific objective",
+            "description": "Choose a type of campaign directly without going through the recommendations based on your objectives"
+        },
+        "billboards": {
+            "title": "Billboard campaigns",
+            "screen_type": "Screen type",
+            "choose_screen_type": "Choose a screen type",
+            "dooh_title": "Digital Out Of Home",
+            "led_screen_title": "LED Screen (AUCHAN)",
+            "choose_countries": "Select one or more countries",
+            "broadcast_period": "Broadcast period",
+            "choose_broadcast_period": "Enter a date range",
+            "start_date": "Start date",
+            "end_date": "End date",
+            "broadcast_locations": "Broadcast locations",
+            "locations": "Locations",
+            "choosed_locations": "location(s) selected",
+            "preview_pannels": "Overview of panels",
+            "senegal_screens": "Our screens in Senegal",
+            "mali_screens": "Our screens in Mali",
+            "preview_description": "We bring you visibility with our led screens in Senegal and Mali",
+            "cars_per_days": "cars per day",
+            "upload_title": "Select or upload a photo or video",
+            "available_files": "Select from your available files",
+            "drag_or_click": "Drag file here or click to upload"
+        }
+    },
+    "buttons": {
+        "create_campaign": "Create campaign",
+        "reactive_campaign": "Reactivate draft campaign",
+        "cancel": "Cancel",
+        "more_details": "More details",
+        "i_valid": "Validate",
+        "proceed_payement": "Proceed to payment"
+    },
+    "settings": {
+        "appearance": "Appearence",
+        "account_access": "Account access"
+    },
+    "tooltips": {
+        "announcement": "Announcement",
+        "costs": "Costs",
+        "online": "Online",
+        "offline": "Offline",
+        "completed": "Completed",
+        "full_screen": "Full screen",
+        "search": "Search",
+        "dark_mode": "Dark mode",
+        "languages": {
+            "title": "Languages",
+            "french": "French",
+            "english": "English"
+        },
+        "need_help": "Need help ?"
+    },
+    "login": {
+        "title": "Sign-in.",
+        "subtitle": "Welcome, please enter your details.",
+        "password": "Password",
+        "password_forgotten": "Forgot your password ?",
+        "or": "OR",
+        "submit": "Submit",
+        "login_btn_google": "Sign-in with Google",
+        "dont_have_account": "Dont have account ?"
+    },
+    "registration": {
+        "title": "Sign-up.",
+        "firstname": "firstname",
+        "lastname": "Lastname",
+        "confirmpassword": "Confirm password",
+        "registration_btn_google": "sign-up with google",
+        "have_account": "Already have an account ?",
+        "finalize_register": "Fill in the fields below to finalize your registration.",
+        "invoicing_elements": "Invoicing elements",
+        "advertising_account": "Advertising account",
+        "mail_address":"Mail address",
+        "company_name": "Company name",
+        "phone_number": "Phone number",
+        "activity_area": "Activity Area",
+        "how_know": "How did you find out about ADAFRI ?",
+        "tell_us_how_know": "Tell us how did you hear about ADAFRI ?",
+        "mouth_to_ear": "From mouth to ear",
+        "referring_site": "Referring site",
+        "social_media": "Social media",
+        "from_ads": "From ads",
+        "saloon": "Lounge",
+        "choose_activity_area": "Choose your activity area",
+        "corp_name": "Enter company name",
+        "enter_phone_number": "Enter your phone number",
+        "enter_email": "Enter your email address",
+        "enter_firstname": "Enter your first name",
+        "enter_lastname": "Enter your last name",
+        "identifier_of_this_account": "Identifier of this account",
+        "identifier_desc": "This identifies this account",
+        "pick_one": "Pick one",
+        "business_lines_options": {
+            "politics": "Politics",
+            "construction": "Construction",
+            "lottery": "Lottery",
+            "communication_agency": "Communication agency",
+            "crafts_arts": "Crafts",
+            "directory_community": "Directory / Community",
+            "ecommerce_marketplace": "E-commerce /Marketplace",
+            "energy": "Energy",
+            "blog": "Blog",
+            "fashion_beauty_wellness": "Fashion/Beauty/Wellness",
+            "app_software": "App/Software",
+            "finances_fintech": "Finances/Fintech",
+            "horeca": "Horeca",
+            "services": "Services",
+            "health": "Health",
+            "immovable": "Immovable",
+            "delivery_logistics": "Delivery/Logistics",
+            "media": "Media",
+            "gifts": "Gifts",
+            "culture_entertainment": "Culture/Entertainment",
+            "car_dealer_garage": "Car dealer / garage",
+            "travels": "Travels",
+            "institutions": "Institutions",
+            "association": "Association",
+            "agro_business": "Agro industry",
+            "bank_insurance": "Bank",
+            "communication": "Communication",
+            "higher_institute": "Higher Institute",
+            "edutech": "Edutech",
+            "telecom": "Telecom",
+            "products_FMCG": "Products and FMCG",
+            "house_decoration": "Articles and decoration Home",
+            "home_appliance": "Home appliance",
+            "multimedia": "Multimedia",
+            "freelance": "Freelance",
+            "cabinet": "Cabinet",
+            "partner": "Partner"
+        }
+    },
+    "transactions": {
+        "author": "Author of the transaction",
+        "type": "Transaction type",
+        "recharge": "Account top up",
+        "date": "Transaction date",
+        "amount": "Transaction amount",
+        "total_expenses": "Total expenses",
+        "last_payement": "Last payement",
+        "account_balance": "Account balance"
+    },
+    "navigation": {
+        "aside": {
+            "overview": "Overview",
+            "transactions": "Transactions",
+            "campaigns": "Campaigns",
+            "settings": "Settings",
+            "files": "File manager",
+            "others_products":  "Others products",
+            "survey_ussd": "Survey by USSD"
+        },
+        "dashboard": {
+            "date": {
+                "today": "Today",
+                "yesterday": "Yesterday",
+                "seven_last_days": "Last 7 days",
+                "show_last_30_days": "Show last 30 days"
+            },
+            "ads_performance": {
+                "title": "Advertising performance",
+                "clicks": "Clicks",
+                "cond_camps": "Camp. conducted",
+                "cond_camps_full": "Campaigns conducted",
+                "average_costs": "Average costs",
+                "average_costs_full": "Average costs",
+                "expenses": "Expenses",
+                "pay": "Pay"
+            },
+            "account": {
+                "title": "Account",
+                "company": "Company",
+                "identifier": "Identifier",
+                "recharge_account": "Recharge account"
+            },
+            "billing": {
+                "title": "Billing",
+                "description": "Last payments made"
+            }, 
+            "search_keywords": {
+                "title": "Search keywords"
+            },
+            "networks": {
+                "title": "Networks"
+            },
+            "draft": {
+                "title": "Drafts",
+                "description": "Continue to create your campaigns"
+            },
+            "summary": {
+                "title": "Summary of campaigns"
+            }
+        },
+        "file_manager": {
+            "title": "File manager",
+            "add_file": "Upload file",
+            "storage": "Storage",
+            "files_detected": "detected files",
+            "contacts_detected": "contacts detected",
+            "files": "files",
+            "only_needed_files": "Upload only the files needed for your campaigns !"
+        }
+    }
+}
